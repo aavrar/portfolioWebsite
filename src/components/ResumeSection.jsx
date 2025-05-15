@@ -449,7 +449,7 @@ const ResumeSection = () => {
           <Title as="h3" style={{ marginBottom: '2rem' }}>
             📄 View Full Resume
           </Title>
-          <DownloadButton href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+          <DownloadButton href="/portfolioWebsite/resume.pdf" target="_blank" rel="noopener noreferrer">
             <i className="fas fa-download" />
             Download PDF
           </DownloadButton>

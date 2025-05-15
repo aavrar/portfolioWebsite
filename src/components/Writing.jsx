@@ -134,10 +134,10 @@ const Writing = () => {
     {
       title: 'Tweets and Tags: A Study of Code-Switching in Online Contexts',
       excerpt: 'This paper analyzes Hindi-English code-switching patterns on Twitter using the L3Cube-HingCorpus. It examines the frequency, placement, and function of inter-, intra-, and tag-level switches within bilingual online discourse. The study draws on sociolinguistic theory to explore how code-switching reflects identity, emotion, and interactional context in digital communication.',
-      image: '/assets/writing/nlp-advances.jpg',
+      image: '/portfolioWebsite/assets/writing/nlp-advances.jpg',
       date: 'April 2025',
       category: 'Research',
-      url: '/assets/papers/codeswitching.pdf'
+      url: '/portfolioWebsite/assets/papers/codeswitching.pdf'
     },
     {
       title: 'The Never-Ending Western Exit',
