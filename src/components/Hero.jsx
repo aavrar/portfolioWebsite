@@ -115,7 +115,7 @@ const Hero = () => {
       <HeroContainer>
         <ProfileImageContainer>
           <ProfileImageWrapper>
-            <ProfileImage src="/portfolioWebsite/assets/images/pfp.png" alt="Aahad Vakani" />
+            <ProfileImage src="assets/images/pfp.png" alt="Aahad Vakani" />
           </ProfileImageWrapper>
         </ProfileImageContainer>
         <HeroContent>
