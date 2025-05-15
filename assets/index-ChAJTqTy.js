@@ -493,7 +493,7 @@ Error generating stack: `+o.message+`
   gap: var(--space-md);
   justify-content: center;
   animation: fadeIn 1s ease-out 0.4s backwards;
-`,fg=()=>d.jsx(rg,{id:"hero",children:d.jsxs(ig,{children:[d.jsx(og,{children:d.jsx(lg,{children:d.jsx(ag,{src:"/portfolioWebsite/assets/images/pfp.png",alt:"Aahad Vakani"})})}),d.jsxs(sg,{children:[d.jsx(ug,{children:"Hi, I'm Aahad Vakani"}),d.jsx(cg,{children:"Computer Science Student & AI Researcher"}),d.jsxs(dg,{children:[d.jsx(Ge,{href:"#projects",onClick:e=>{e.preventDefault(),document.getElementById("projects").scrollIntoView({behavior:"smooth"})},children:"View Projects"}),d.jsx(Ge,{href:"#contact",onClick:e=>{e.preventDefault(),document.getElementById("contact").scrollIntoView({behavior:"smooth"})},children:"Get in Touch"})]})]})]})}),pg=mf`
+`,fg=()=>d.jsx(rg,{id:"hero",children:d.jsxs(ig,{children:[d.jsx(og,{children:d.jsx(lg,{children:d.jsx(ag,{src:"assets/images/pfp.png",alt:"Aahad Vakani"})})}),d.jsxs(sg,{children:[d.jsx(ug,{children:"Hi, I'm Aahad Vakani"}),d.jsx(cg,{children:"Computer Science Student & AI Researcher"}),d.jsxs(dg,{children:[d.jsx(Ge,{href:"#projects",onClick:e=>{e.preventDefault(),document.getElementById("projects").scrollIntoView({behavior:"smooth"})},children:"View Projects"}),d.jsx(Ge,{href:"#contact",onClick:e=>{e.preventDefault(),document.getElementById("contact").scrollIntoView({behavior:"smooth"})},children:"Get in Touch"})]})]})]})}),pg=mf`
   0% {
     background-position: 200% 50%;
   }
