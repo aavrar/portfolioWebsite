@@ -121,7 +121,7 @@ const Hero = () => {
         <HeroContent>
           <Title>Hi, I'm Aahad Vakani</Title>
           <Tagline>
-            Computer Science Student & AI Researcher
+            I'm a passionate software developer focused on building innovative solutions
           </Tagline>
           <HeroButtons>
             <AnimatedButton href="#projects" onClick={(e) => {

@@ -1,0 +1,133 @@
+<context>
+# Overview  
+This is a personal portfolio website for Aahad Vakani, a Computer Science and English Writing double major.
+ The site serves as a professional digital identity, showcasing CS projects, writing samples, research, 
+ resume, and contact options. Its purpose is to support applications for PhD programs, jobs, and 
+ internships by combining strong technical and creative work in a clean, well-designed interface.
+
+The site addresses the common challenge of representing interdisciplinary work with clarity and polish. 
+It’s designed for professors, recruiters, collaborators, and peers who want to explore the user's skills 
+and accomplishments at a glance.
+# Core Features  
+1. Sticky Sidebar Navigation:
+- Fixed to the left side of the screen; appears after scrolling past the Home section.
+- Links to major sections: About, Projects, Research, Writing, Resume, Contact.
+- Animated slide-in, pastel-accented labels, collapsible on mobile.
+- Important for intuitive site-wide access.
+
+2. Modular Resume Cards
+- Each resume entry is displayed as a collapsible card with title, subtitle, icons, summary, and “Read More”.
+- Final card allows users to download full PDF resume.
+- Helps modularize content and support quick scanning by recruiters.
+
+3. CS Project Showcase
+- Individual project cards with titles, descriptions, and buttons for “Live Demo” and “GitHub”.
+- Supports animated gradient button hover effects.
+- Highlights skills in ML, web dev, and research.
+
+4. English Writing Portfolio
+- List or grid of writing samples (e.g., literary analysis, poetry, reflections).
+- Each item includes title, genre, short description, and full link/download.
+- Demonstrates the user’s literary and rhetorical range.
+
+5. Dark Mode Pastel UI
+- Full site uses a soft pastel-themed dark mode (deep mauve-gray background, coral and lemon-yellow accents, beige text).
+- Includes animated transitions and subtle hover effects.
+
+6. No light mode; design coherence prioritized.
+
+# User Experience  
+1. User Personas
+- Grad school faculty or admissions committee member
+- Technical recruiter or hiring manager
+- Peer/student collaborator
+
+2. Key Flows
+- Land on homepage → sidebar appears → navigate to projects/resume → click to view writing or download resume → use contact form or follow GitHub/LinkedIn
+
+3. UI/UX Considerations
+- Fully mobile responsive
+- Sticky navigation with anchor-based scrolling
+- Accessible contrast levels with pastel theme
+- Minimalist typography and animated interactions
+- Clear visual hierarchy between headings, content, and buttons
+</context>
+<PRD>
+
+# Technical Architecture  
+1. System Components
+- React frontend (Vite or Create React App)
+- CSS Modules or Tailwind CSS for styling
+- GitHub Pages deployment
+- Resume and writing samples served from /public folder
+
+2. Data Models
+- JSON-based resume entries and project listings
+- Optional Markdown support for writing
+
+3. APIs and Integrations
+- EmailJS or Formspree for contact form submission
+- GitHub Pages for hosting
+- Optionally, TaskMaster AI via MCP for dev workflow automation
+
+4. Infrastructure
+- GitHub repository with gh-pages branch
+- .env support for email API or MCP keys
+
+# Development Roadmap  
+1. MVP
+- Convert static HTML to modular React app
+- Create sticky sidebar and anchor navigation
+- Build modular resume component with data from JSON
+- Add project cards with static links
+- Include basic About and Contact sections
+- Apply dark pastel theme site-wide
+- Set up GitHub Pages deployment with working custom domain
+- Integrate downloadable resume file
+
+2. Future Enhancements
+- Modal previews for writing samples
+- Timeline-based project history
+- Contact form with validation and backend-free submission
+- Command palette or keyboard nav
+- Live blog or journal component
+- Testimonials from peers/mentors
+- TaskMaster AI integration for managing updates
+
+# Logical Dependency Chain
+1. Set up React project structure (App, components folder, routing or layout logic)
+2. Build and verify sidebar + scroll behavior
+3. Add About and Projects sections with static content
+4. Implement modular Resume with JSON data
+5. Add Writing section and placeholder content
+6. Style entire app with pastel dark theme
+7. Finalize resume and assets in /public
+8. Deploy to GitHub Pages and connect custom domain
+9. Layer in animated gradient buttons and hover effects
+10. Add writing preview modals or interactive touches
+
+# Risks and Mitigations  
+1. Risk: GitHub Pages asset path issues
+- Mitigation: Use process.env.PUBLIC_URL or relative paths
+
+2. Risk: Custom domain setup fails
+- Mitigation: Use fallback GitHub Pages URL until DNS resolves
+
+3. Risk: Overengineering for MVP
+- Mitigation: Focus on clean, working frontend with basic routing and JSON-driven components before adding animation or modals
+
+4. Risk: TaskMaster integration complexity
+- Mitigation: Only layer it in after MVP is stable; not essential for launch
+
+# Appendix  
+1. Resume Source: [Aahad_Resume_May_25.pdf]
+
+2. Color Palette
+- Background: #2b2a33
+- Accent Yellow: #ffe680
+- Accent Coral: #ff9b9b
+
+Text: #f5f2eb and #aaa6b2
+
+Deployment URL: https://aavrar.github.io/portfolioWebsite
+</PRD>

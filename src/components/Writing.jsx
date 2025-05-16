@@ -50,26 +50,6 @@ const ArticleCard = styled(AnimatedCard)`
   flex-direction: column;
 `;
 
-const ArticleImage = styled.div`
-  position: relative;
-  padding-top: 56.25%; /* 16:9 Aspect Ratio */
-  overflow: hidden;
-  
-  img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform var(--transition-normal);
-  }
-
-  ${ArticleCard}:hover & img {
-    transform: scale(1.05);
-  }
-`;
-
 const ArticleContent = styled.div`
   padding: var(--space-xl);
 `;
@@ -134,26 +114,23 @@ const Writing = () => {
     {
       title: 'Tweets and Tags: A Study of Code-Switching in Online Contexts',
       excerpt: 'This paper analyzes Hindi-English code-switching patterns on Twitter using the L3Cube-HingCorpus. It examines the frequency, placement, and function of inter-, intra-, and tag-level switches within bilingual online discourse. The study draws on sociolinguistic theory to explore how code-switching reflects identity, emotion, and interactional context in digital communication.',
-      image: '/portfolioWebsite/assets/writing/nlp-advances.jpg',
       date: 'April 2025',
       category: 'Research',
-      url: '/portfolioWebsite/assets/papers/codeswitching.pdf'
+      url: 'assets/papers/codeswitching.pdf'
     },
     {
       title: 'The Never-Ending Western Exit',
       excerpt: 'This paper explores Mohsin Hamid\'s Exit West as a reimagining of migration through magical realism, focusing on the psychological and cultural dislocation of refugees. It analyzes how Hamid uses surreal elements—such as the magical doors—to blur borders of space, identity, and time. The novel is read as a critique of Western perceptions of migration and an invocation of shared global responsibility.',
-      image: '/assets/writing/ml-future.jpg',
       date: 'Spring 2025',
       category: 'Analysis',
-      url: '/assets/papers/exitwest.pdf'
+      url: 'assets/papers/exitwest.pdf'
     },
     {
-      title: 'Ethics in Artificial Intelligence',
-      excerpt: 'Discussing the importance of ethical considerations in AI development and deployment, focusing on bias mitigation, transparency, and responsible innovation. This paper examines real-world case studies and proposes frameworks for ethical AI development.',
-      image: '/assets/writing/ai-ethics.jpg',
-      date: 'January 2024',
-      category: 'Opinion',
-      url: '/assets/papers/ai-ethics.pdf'
+      title: 'Stacked Ensemble Classification',
+      excerpt: 'This report documents the development of a high-accuracy classification pipeline using a stacked ensemble of SVM, MLP, and XGBoost models trained on extracted image features. It emphasizes methodical experimentation, including structured hyperparameter tuning and rigorous 4-fold cross-validation to evaluate model stability. The report integrates quantitative performance analysis (accuracy, F1, ROC AUC) with qualitative interpretation of class probabilities and model uncertainty. Visualizations and tables in the appendix enhance transparency and provide interpretive depth.',
+      date: 'Spring 2025',
+      category: 'Experimental Report',
+      url: 'assets/ML Reports/ensemble.pdf'
     }
   ];
 
@@ -170,9 +147,6 @@ const Writing = () => {
         <WritingGrid>
           {articles.map((article, index) => (
             <ArticleCard key={index}>
-              <ArticleImage>
-                <img src={article.image} alt={article.title} />
-              </ArticleImage>
               <ArticleContent>
                 <ArticleMeta>
                   <ArticleTag>{article.category}</ArticleTag>
@@ -183,7 +157,7 @@ const Writing = () => {
                 </ArticleTitle>
                 <ArticleExcerpt>{article.excerpt}</ArticleExcerpt>
                 <ReadMore href={article.url}>
-                  Read Article <span>→</span>
+                  Read Paper <span>→</span>
                 </ReadMore>
               </ArticleContent>
             </ArticleCard>

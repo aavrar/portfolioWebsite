@@ -14,6 +14,8 @@ const HeaderContainer = styled.header`
   border-bottom: 1px solid var(--card-border);
   padding: var(--space-md) 0;
   box-shadow: ${props => props.isScrolled ? 'var(--shadow-md)' : 'none'};
+  transform: translateY(${props => props.isHidden ? '-100%' : '0'});
+  opacity: ${props => props.isHidden ? '0' : '1'};
 `;
 
 const Nav = styled.nav`
@@ -138,11 +140,13 @@ const MenuButton = styled.button`
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isHidden, setIsHidden] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
+      setIsHidden(window.scrollY > 60);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -158,7 +162,7 @@ const Header = () => {
   };
 
   return (
-    <HeaderContainer isScrolled={isScrolled}>
+    <HeaderContainer isScrolled={isScrolled} isHidden={isHidden}>
       <Nav>
         <Logo href="#" onClick={(e) => {
           e.preventDefault();
@@ -182,7 +186,7 @@ const Header = () => {
           <NavLink href="#writing" onClick={(e) => {
             e.preventDefault();
             scrollToSection('writing');
-          }}>Writing</NavLink>
+          }}>Research & Writing</NavLink>
           <NavLink href="#contact" onClick={(e) => {
             e.preventDefault();
             scrollToSection('contact');
@@ -213,7 +217,7 @@ const Header = () => {
         <NavLink href="#writing" onClick={(e) => {
           e.preventDefault();
           scrollToSection('writing');
-        }}>Writing</NavLink>
+        }}>Research & Writing</NavLink>
         <NavLink href="#contact" onClick={(e) => {
           e.preventDefault();
           scrollToSection('contact');
