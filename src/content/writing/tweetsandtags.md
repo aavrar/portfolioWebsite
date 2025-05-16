@@ -38,10 +38,10 @@ Bullock, B. E., & Toribio, A. J. (Eds.). (2012). *The Cambridge handbook of ling
 *code-switching.* Cambridge University Press.  
 Gardner-Chloros, P. (2009). *Code-switching*. Cambridge University Press.  
 Jose, N., Gupta, D., & Shrivastava, M. (2020). *A survey of current datasets for code-switching*  
-*research.* In 2020 IEEE International Conference on Advanced Computing & Communication Systems (ICACCS) (pp. 136-141). IEEE. https://doi.org/10.1109/ICACCS48705.2020.9074205  
+*research.* In 2020 IEEE International Conference on Advanced Computing & Communication Systems (ICACCS) (pp. 136-141). IEEE. <https://doi.org/10.1109/ICACCS48705.2020.9074205>  
 Myers-Scotton, C. (2006). *Multiple voices: An introduction to bilingualism*. Wiley-Blackwell.  
 Nayak, R., & Joshi, M. (2022). *L3Cube-HingCorpus: A corpus for Hinglish code-mixed*  
-*language modeling*. L3Cube Pune Research Group. Retrieved from https://github.com/l3cube-pune/code-mixed-nlp  
+*language modeling*. L3Cube Pune Research Group. Retrieved from <https://github.com/l3cube-pune/code-mixed-nlp>  
 Sebba, M., Mahootian, S., & Jonsson, C. (Eds.). (2012). Language mixing and code-switching in writing: Approaches to mixed-language written discourse. Routledge.  
 Solorio, T., Blair, E., Maharjan, S., Bethard, S., Diab, M., Hirschberg, J., ... & Liu, Y. (2014).  
 Overview for the First Shared Task on Language Identification in Code-Switched Data.  
