@@ -46,7 +46,7 @@ function App() {
       <GlobalStyles />
       <AppContainer>
         <Header />
-        <Sidebar />
+
         <MainContent sidebarVisible={sidebarVisible}>
           <Hero />
           <About />
