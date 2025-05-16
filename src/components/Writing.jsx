@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import AnimatedCard from './AnimatedCard';
+import { Link } from 'react-router-dom';
+import writingArticles from '../data/writing';
 
 const WritingSection = styled.section`
   background-color: var(--background-alt);
@@ -94,7 +96,7 @@ const ArticleExcerpt = styled.p`
   line-height: 1.6;
 `;
 
-const ReadMore = styled.a`
+const ReadMore = styled(Link)`
   display: inline-flex;
   align-items: center;
   gap: var(--space-xs);
@@ -110,29 +112,7 @@ const ReadMore = styled.a`
 `;
 
 const Writing = () => {
-  const articles = [
-    {
-      title: 'Tweets and Tags: A Study of Code-Switching in Online Contexts',
-      excerpt: 'This paper analyzes Hindi-English code-switching patterns on Twitter using the L3Cube-HingCorpus. It examines the frequency, placement, and function of inter-, intra-, and tag-level switches within bilingual online discourse. The study draws on sociolinguistic theory to explore how code-switching reflects identity, emotion, and interactional context in digital communication.',
-      date: 'April 2025',
-      category: 'Research',
-      url: 'assets/papers/codeswitching.pdf'
-    },
-    {
-      title: 'The Never-Ending Western Exit',
-      excerpt: 'This paper explores Mohsin Hamid\'s Exit West as a reimagining of migration through magical realism, focusing on the psychological and cultural dislocation of refugees. It analyzes how Hamid uses surreal elements—such as the magical doors—to blur borders of space, identity, and time. The novel is read as a critique of Western perceptions of migration and an invocation of shared global responsibility.',
-      date: 'Spring 2025',
-      category: 'Analysis',
-      url: 'assets/papers/exitwest.pdf'
-    },
-    {
-      title: 'Stacked Ensemble Classification',
-      excerpt: 'This report documents the development of a high-accuracy classification pipeline using a stacked ensemble of SVM, MLP, and XGBoost models trained on extracted image features. It emphasizes methodical experimentation, including structured hyperparameter tuning and rigorous 4-fold cross-validation to evaluate model stability. The report integrates quantitative performance analysis (accuracy, F1, ROC AUC) with qualitative interpretation of class probabilities and model uncertainty. Visualizations and tables in the appendix enhance transparency and provide interpretive depth.',
-      date: 'Spring 2025',
-      category: 'Experimental Report',
-      url: 'assets/ML Reports/ensemble.pdf'
-    }
-  ];
+  const articles = writingArticles;
 
   return (
     <WritingSection id="writing">
@@ -149,15 +129,17 @@ const Writing = () => {
             <ArticleCard key={index}>
               <ArticleContent>
                 <ArticleMeta>
-                  <ArticleTag>{article.category}</ArticleTag>
-                  <span>{article.date}</span>
+                  {/* If you add category to your data file, uncomment this */}
+                  {/* {article.category && <ArticleTag>{article.category}</ArticleTag>} */}
+                  {/* If you add date to your data file, uncomment this */}
+                  {/* {article.date && <span>{article.date}</span>} */}
                 </ArticleMeta>
                 <ArticleTitle>
-                  <a href={article.url}>{article.title}</a>
+                  <Link to={`/writing/${article.slug}`}>{article.title}</Link>
                 </ArticleTitle>
-                <ArticleExcerpt>{article.excerpt}</ArticleExcerpt>
-                <ReadMore href={article.url}>
-                  Read Paper <span>→</span>
+                <ArticleExcerpt>{article.description}</ArticleExcerpt>
+                <ReadMore to={`/writing/${article.slug}`}>
+                  Read Article <span>→</span>
                 </ReadMore>
               </ArticleContent>
             </ArticleCard>

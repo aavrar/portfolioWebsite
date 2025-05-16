@@ -3,7 +3,7 @@ import styled, { keyframes } from 'styled-components';
 import AnimatedCard from './AnimatedCard';
 import AnimatedButton from './AnimatedButton';
 
-
+// Styled Components
 const Section = styled.section`
   background-color: var(--background);
   padding: var(--space-3xl) 0;
@@ -85,12 +85,13 @@ const ModelNote = styled.div`
   color: var(--text-tertiary);
 `;
 
+// Main Component
 const MicrofictionGenerator = () => {
   const [story, setStory] = useState('');
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
 
-  const modelUsed = 'mistralai/mistral-7b-instruct';
+  const modelUsed = 'gemini-2.0-flash';
 
   const generateStory = async () => {
     if (!input.trim()) {
@@ -98,39 +99,34 @@ const MicrofictionGenerator = () => {
       return;
     }
 
-    const prompt = `Write a microfiction story about ${input.trim()}.`;
+    const prompt = `Write a microfiction story about ${input.trim()}. Respond with exactly 3–4 surreal sentences, no explanations.`;
 
     setLoading(true);
     setStory('');
 
-    const apiKey = import.meta.env.VITE_OPENROUTER_API_KEY;
+    const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
+
     try {
-      const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
-        method: 'POST',
-        headers: {
-            "Authorization": `Bearer ${apiKey}`,
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          model: modelUsed,
-          messages: [
-            {
-              role: 'system',
-              content:
-                'You are a creative writing assistant that writes surreal microfiction. Always respond with a 3–4 sentence story, no more and no less. Do not include introductions or explanations—just the story.',
-            },
-            {
-              role: 'user',
-              content: prompt,
-            },
-          ],
-          max_tokens: 200,
-          temperature: 0.9,
-        }),
-      });
+      const response = await fetch(
+        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`,
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            contents: [
+              {
+                role: 'user',
+                parts: [{ text: prompt }],
+              },
+            ],
+          }),
+        }
+      );
 
       const data = await response.json();
-      const output = data.choices?.[0]?.message?.content || 'No story generated.';
+      const output = data.candidates?.[0]?.content?.parts?.[0]?.text || 'No story generated.';
       setStory(output.trim());
     } catch (err) {
       console.error('Error:', err);

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import AnimatedButton from './AnimatedButton';
+import { Link, useLocation } from 'react-router-dom';
 
 const HeaderContainer = styled.header`
   position: fixed;
@@ -33,7 +34,7 @@ const Logo = styled(AnimatedButton)`
   padding: var(--space-xs);
   background: none;
   border: none;
-  
+
   &:hover {
     background: none;
     transform: none;
@@ -46,7 +47,7 @@ const NavLinks = styled.div`
   display: flex;
   gap: var(--space-xl);
   align-items: center;
-  
+
   @media (max-width: 768px) {
     display: none;
   }
@@ -69,12 +70,13 @@ const MobileNavLinks = styled.div`
   z-index: 900;
 `;
 
-const NavLink = styled(AnimatedButton)`
+const NavLink = styled(AnimatedButton).attrs({ as: Link })`
   padding: var(--space-xs) var(--space-sm);
   font-size: 0.9rem;
   background: none;
   border: none;
-  
+  text-decoration: none;
+
   &:hover {
     background: none;
     transform: none;
@@ -91,7 +93,7 @@ const MenuButton = styled.button`
   color: var(--text-primary);
   cursor: pointer;
   z-index: 1000;
-  
+
   @media (max-width: 768px) {
     display: block;
   }
@@ -142,89 +144,57 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
       setIsHidden(window.scrollY > 60);
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setIsMenuOpen(false);
+  useEffect(() => {
+    const hash = location.hash;
+    if (hash) {
+      const el = document.getElementById(hash.replace('#', ''));
+      if (el) {
+        setTimeout(() => {
+          el.scrollIntoView({ behavior: 'smooth' });
+        }, 0);
+      }
     }
-  };
+    setIsMenuOpen(false);
+  }, [location]);
 
   return (
     <HeaderContainer isScrolled={isScrolled} isHidden={isHidden}>
       <Nav>
-        <Logo href="#" onClick={(e) => {
-          e.preventDefault();
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        }}>
-          AV
-        </Logo>
+        <Logo as={Link} to="/">AV</Logo>
         <NavLinks>
-          <NavLink href="#about" onClick={(e) => {
-            e.preventDefault();
-            scrollToSection('about');
-          }}>About</NavLink>
-          <NavLink href="#projects" onClick={(e) => {
-            e.preventDefault();
-            scrollToSection('projects');
-          }}>Projects</NavLink>
-          <NavLink href="#resume" onClick={(e) => {
-            e.preventDefault();
-            scrollToSection('resume');
-          }}>Resume</NavLink>
-          <NavLink href="#writing" onClick={(e) => {
-            e.preventDefault();
-            scrollToSection('writing');
-          }}>Research & Writing</NavLink>
-          <NavLink href="#contact" onClick={(e) => {
-            e.preventDefault();
-            scrollToSection('contact');
-          }}>Contact</NavLink>
+          <NavLink to="/#about">About</NavLink>
+          <NavLink to="/#projects">Projects</NavLink>
+          <NavLink to="/codeswitching">Code-Switching</NavLink>
+          <NavLink to="/#resume">Resume</NavLink>
+          <NavLink to="/#writing">Research & Writing</NavLink>
+          <NavLink to="/#contact">Contact</NavLink>
         </NavLinks>
-        <MenuButton 
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          isOpen={isMenuOpen}
-          aria-label="Toggle menu"
-        >
+        <MenuButton onClick={() => setIsMenuOpen(!isMenuOpen)} isOpen={isMenuOpen} aria-label="Toggle menu">
           <span />
         </MenuButton>
       </Nav>
 
       <MobileNavLinks isOpen={isMenuOpen}>
-        <NavLink href="#about" onClick={(e) => {
-          e.preventDefault();
-          scrollToSection('about');
-        }}>About</NavLink>
-        <NavLink href="#projects" onClick={(e) => {
-          e.preventDefault();
-          scrollToSection('projects');
-        }}>Projects</NavLink>
-        <NavLink href="#resume" onClick={(e) => {
-          e.preventDefault();
-          scrollToSection('resume');
-        }}>Resume</NavLink>
-        <NavLink href="#writing" onClick={(e) => {
-          e.preventDefault();
-          scrollToSection('writing');
-        }}>Research & Writing</NavLink>
-        <NavLink href="#contact" onClick={(e) => {
-          e.preventDefault();
-          scrollToSection('contact');
-        }}>Contact</NavLink>
+        <NavLink to="/#about">About</NavLink>
+        <NavLink to="/#projects">Projects</NavLink>
+        <NavLink to="/codeswitching">Code-Switching</NavLink>
+        <NavLink to="/#resume">Resume</NavLink>
+        <NavLink to="/#writing">Research & Writing</NavLink>
+        <NavLink to="/#contact">Contact</NavLink>
       </MobileNavLinks>
     </HeaderContainer>
   );
 };
 
-export default Header; 
+export default Header;
