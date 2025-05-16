@@ -3,6 +3,7 @@ import styled, { keyframes } from 'styled-components';
 import AnimatedCard from './AnimatedCard';
 import AnimatedButton from './AnimatedButton';
 
+
 const Section = styled.section`
   background-color: var(--background);
   padding: var(--space-3xl) 0;
@@ -102,12 +103,13 @@ const MicrofictionGenerator = () => {
     setLoading(true);
     setStory('');
 
+    const apiKey = import.meta.env.VITE_OPENROUTER_API_KEY;
     try {
       const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
         method: 'POST',
         headers: {
-          'Authorization': 'Bearer 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',
-          'Content-Type': 'application/json',
+            "Authorization": `Bearer ${apiKey}`,
+            "Content-Type": "application/json"
         },
         body: JSON.stringify({
           model: modelUsed,

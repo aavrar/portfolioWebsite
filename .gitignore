@@ -10,7 +10,10 @@ dev-debug.log
 node_modules/
 
 # Environment variables
+# .gitignore
 .env
+.env.*
+
 
 # Editor directories and files
 .idea
