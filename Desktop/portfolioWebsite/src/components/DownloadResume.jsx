@@ -91,8 +91,8 @@ const FileInfo = styled.div`
 
 const DownloadResume = ({ 
   pdfUrl = 'assets/resume.pdf', 
-  fileSize = '245 KB', 
-  lastUpdated = 'May 2025' 
+  fileSize = '45 KB', 
+  lastUpdated = 'June 2025' 
 }) => {
   const [isHovered, setIsHovered] = useState(false);
 
