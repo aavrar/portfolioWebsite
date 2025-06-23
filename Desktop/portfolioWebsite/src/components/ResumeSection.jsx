@@ -134,9 +134,9 @@ const ResumeSection = () => {
   const [activeTag, setActiveTag] = useState(null);
 
   const types = [
-    { id: 'work', label: 'Work Experience', icon: '💼' },
-    { id: 'education', label: 'Education', icon: '🎓' },
-    { id: 'project', label: 'Projects', icon: '🚀' }
+    { id: 'work', label: 'Work Experience' },
+    { id: 'education', label: 'Education' },
+    { id: 'project', label: 'Projects'}
   ];
 
   const allTags = useMemo(() => getAllTags(), []);
@@ -174,7 +174,7 @@ const ResumeSection = () => {
               $active={activeType === type.id && !activeTag}
               onClick={() => handleTypeClick(type.id)}
             >
-              {type.icon} {type.label}
+              {type.label}
             </FilterButton>
           ))}
         </FilterContainer>

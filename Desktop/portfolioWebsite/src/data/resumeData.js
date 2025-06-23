@@ -21,7 +21,6 @@ export const resumeData = [
     id: 'work-1',
     title: 'Information Technology Intern',
     subtitle: 'DePauw University',
-    icon: '💻',
     shortDescription: 'Providing technical support and troubleshooting for campus-wide IT infrastructure.',
     fullDescription: `
       • Provide technical support and troubleshooting for campus-wide IT infrastructure
@@ -40,7 +39,6 @@ export const resumeData = [
     id: 'work-2',
     title: 'Resident Assistant',
     subtitle: 'DePauw University',
-    icon: '🏫',
     shortDescription: 'Foster a supportive and inclusive residential community for 40+ students.',
     fullDescription: `
       • Foster a supportive and inclusive residential community for 40+ students
@@ -59,7 +57,6 @@ export const resumeData = [
     id: 'edu-1',
     title: 'Bachelor of Arts in Computer Science',
     subtitle: 'DePauw University',
-    icon: '🎓',
     shortDescription: 'Pursuing a comprehensive computer science education with a focus on artificial intelligence and software development.',
     fullDescription: `
       • Major in Computer Science with focus on AI and Machine Learning
@@ -78,7 +75,6 @@ export const resumeData = [
     id: 'edu-2',
     title: 'Bachelor of Arts in English Writing',
     subtitle: 'DePauw University',
-    icon: '🎓',
     shortDescription: 'Pursuing a comprehensive English education with courses on fiction, non-fiction, and playwriting among other forms.',
     fullDescription: `
       • Major in English Writing with focus on fiction, non-fiction, and playwriting
@@ -94,38 +90,18 @@ export const resumeData = [
   },
   {
     id: 'proj-1',
-    title: 'AI-Powered Task Management System',
+    title: 'Procedural Story Adventure Engine',
     subtitle: 'Personal Project',
-    icon: '🤖',
-    shortDescription: 'Developed an intelligent task management system using AI to automate task breakdown and prioritization.',
+    shortDescription: 'A browser-based, procedurally generated text adventure where every playthrough is a fresh world.',
     fullDescription: `
-      • Built a sophisticated task management system with AI integration
-      • Implemented natural language processing for task analysis
+      • Built a browser-based, procedurally generated text adventure where every playthrough is a fresh world
+      • Implemented fuzzy command matching for natural language processing
       • Created an intuitive user interface using React and styled-components
-      • Integrated with OpenAI's API for intelligent task processing
       • Developed RESTful APIs using Node.js and Express
     `,
-    startDate: '2024-01-01',
-    endDate: '2024-03-01',
-    tags: ['React', 'Node.js', 'AI/ML', 'OpenAI', 'REST APIs', 'TypeScript'],
-    type: 'project'
-  },
-  {
-    id: 'proj-2',
-    title: 'Portfolio Website',
-    subtitle: 'Personal Project',
-    icon: '🌐',
-    shortDescription: 'Designed and developed a modern, responsive portfolio website showcasing projects and skills.',
-    fullDescription: `
-      • Created a responsive portfolio website using React and styled-components
-      • Implemented modern UI/UX design principles and animations
-      • Integrated dark/light theme support
-      • Optimized performance and accessibility
-      • Added interactive components and smooth transitions
-    `,
-    startDate: '2024-02-01',
-    endDate: '2024-03-01',
-    tags: ['React', 'Styled Components', 'UI/UX Design', 'Responsive Design', 'Web Development'],
+    startDate: '2025-05-04',
+    endDate: '2025-06-20',
+    tags: ['React', 'FastAPI', 'Python', 'Pydantic', 'Modern CSS', 'Uvicorn', 'HuggingFace Transformers', 'OpenAI', 'Axios'],
     type: 'project'
   }
 ];
