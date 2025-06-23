@@ -78,17 +78,17 @@ const Contact = () => {
         <CardWrapper className="fade-in-up">
           <ContactButtons>
             <AnimatedButton href="mailto:aahadvakani@gmail.com">
-              📧 Email Me
+             Email Me
             </AnimatedButton>
             <AnimatedButton
               href="https://www.linkedin.com/in/abdul-aahad-vakani-793aa0234/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              💼 LinkedIn Profile
+              LinkedIn Profile
             </AnimatedButton>
             <AnimatedButton href="https://github.com/aavrar" target="_blank" rel="noopener noreferrer">
-              💻 View GitHub
+              View GitHub
             </AnimatedButton>
           </ContactButtons>
           <Note>

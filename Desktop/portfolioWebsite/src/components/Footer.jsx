@@ -14,6 +14,26 @@ const Container = styled.div`
   padding: 0 var(--space-md);
 `;
 
+const SocialIcon = styled.a`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent);
+  color: #fff;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  font-size: 1.5rem;
+  transition: background var(--transition), color var(--transition), transform var(--transition);
+  box-shadow: 0 2px 8px rgba(44,62,80,0.08);
+  &:hover, &:focus {
+    background: var(--accent-hover);
+    color: #fff;
+    transform: translateY(-2px) scale(1.08);
+    outline: none;
+  }
+`;
+
 const FooterContent = styled.div`
   display: flex;
   justify-content: space-between;
@@ -110,31 +130,15 @@ const Footer = () => {
             </p>
           </FooterLeft>
           <SocialLinks>
-            <SocialLink 
-              href="https://github.com/aavrar" 
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="GitHub"
-              title="GitHub"
-            >
-              <span role="img" aria-label="GitHub">💻</span>
-            </SocialLink>
-            <SocialLink 
-              href="https://www.linkedin.com/in/abdul-aahad-vakani-793aa0234/" 
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn"
-              title="LinkedIn"
-            >
-              <span role="img" aria-label="LinkedIn">💼</span>
-            </SocialLink>
-            <SocialLink 
-              href="mailto:aahadvakani@gmail.com"
-              aria-label="Email"
-              title="Email"
-            >
-              <span role="img" aria-label="Email">📧</span>
-            </SocialLink>
+            <SocialIcon href="https://github.com/aavrar" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <i className="fab fa-github"></i>
+            </SocialIcon>
+            <SocialIcon href="https://linkedin.com/in/abdul-aahad-vakani-793aa0234/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <i className="fab fa-linkedin"></i>
+            </SocialIcon>
+            <SocialIcon href="mailto:aahadvakani@gmail.com" aria-label="Email">
+              <i className="fas fa-envelope"></i>
+            </SocialIcon>
           </SocialLinks>
         </FooterContent>
         <Copyright>

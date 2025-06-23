@@ -184,10 +184,10 @@ const Hero = () => {
             </AnimatedButton>
           </HeroButtons>
           <SocialLinks>
-            <SocialIcon href="https://github.com/aahadvakani" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <SocialIcon href="https://github.com/aavrar" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
               <i className="fab fa-github"></i>
             </SocialIcon>
-            <SocialIcon href="https://linkedin.com/in/aahadvakani" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <SocialIcon href="https://linkedin.com/in/abdul-aahad-vakani-793aa0234/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
               <i className="fab fa-linkedin"></i>
             </SocialIcon>
             <SocialIcon href="mailto:aahadvakani@gmail.com" aria-label="Email">
