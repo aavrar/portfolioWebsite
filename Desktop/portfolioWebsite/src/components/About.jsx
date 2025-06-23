@@ -1,8 +1,8 @@
-// components/About.jsx
 import React from 'react';
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
-const AboutSection = styled.section`
+const AboutSection = styled(motion.section)`
   background: linear-gradient(135deg, var(--background-alt) 60%, var(--background) 100%);
   padding: var(--space-xl) 0 var(--space-2xl) 0;
   min-height: 60vh;
@@ -23,7 +23,6 @@ const AboutCard = styled.div`
   border: 1.5px solid var(--card-border);
   padding: var(--space-xl) var(--space-lg);
   margin: 0 auto;
-  animation: fadeInUp 0.9s cubic-bezier(0.4,0,0.2,1) both;
 `;
 
 const Heading = styled.h2`
@@ -62,9 +61,15 @@ const Quote = styled.blockquote`
 
 const About = () => {
   return (
-    <AboutSection id="about">
+    <AboutSection
+      id="about"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
+    >
       <Container>
-        <AboutCard className="fade-in-up">
+        <AboutCard>
           <Heading>About Me</Heading>
           <Paragraph>
             I’m a Computer Science student and a writer, passionate about artificial intelligence, machine learning, and the art of storytelling. My journey is driven by curiosity—whether I’m building software or crafting essays, I love exploring the intersection of logic and creativity.

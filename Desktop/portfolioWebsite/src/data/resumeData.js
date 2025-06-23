@@ -103,6 +103,22 @@ export const resumeData = [
     endDate: '2025-06-20',
     tags: ['React', 'FastAPI', 'Python', 'Pydantic', 'Modern CSS', 'Uvicorn', 'HuggingFace Transformers', 'OpenAI', 'Axios'],
     type: 'project'
+  },
+  {
+    id: 'proj-2',
+    title: 'Portfolio Website',
+    subtitle: 'Personal Project',
+    shortDescription: 'A modern, responsive portfolio website showcasing projects and skills.',
+    fullDescription: `
+      • Built a modern, responsive portfolio website showcasing projects and skills
+      • Implemented dark/light theme support
+      • Created an intuitive user interface using React and styled-components
+      • Optimized performance and accessibility
+    `,
+    startDate: '2025-05-04',
+    endDate: '2025-06-20',
+    tags: ['React', 'Styled Components', 'UI/UX Design', 'Responsive Design', 'Web Development'],
+    type: 'project'
   }
 ];
 

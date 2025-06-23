@@ -91,16 +91,12 @@ const MainContent = styled.div`
   min-width: 0;
 `;
 
-const Section = styled.section`
+const Section = styled(motion.section)`
   width: 100%;
   margin-bottom: var(--space-2xl);
   padding-top: var(--space-lg);
   scroll-margin-top: 80px;
   background: transparent;
-  &.fade-in-up {
-    opacity: 0;
-    animation: fadeInUp 0.8s cubic-bezier(0.4,0,0.2,1) forwards;
-  }
 `;
 
 const SectionTitle = styled.h2`
@@ -236,6 +232,11 @@ const barOptions = {
   animation: { duration: 1000, easing: 'easeOutQuart' },
 };
 
+const fadeInUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.4, 0, 0.2, 1] } }
+};
+
 const CodeSwitching = () => {
   const langData = {
     labels: ['Hindi Tokens', 'English Tokens'],
@@ -282,7 +283,13 @@ const CodeSwitching = () => {
           <TOCLink href="#examples">Examples</TOCLink>
         </TOC>
         <MainContent>
-          <Section id="overview" className="fade-in-up">
+          <Section
+            id="overview"
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+          >
             <SectionTitle>Code-Switching in Online Contexts</SectionTitle>
             <Paragraph>
               Drawing on the L3Cube-HingCorpus, this analysis explores over 60,000 Hinglish tweets to study
@@ -290,7 +297,13 @@ const CodeSwitching = () => {
             </Paragraph>
             <StatGrid>
               {stats.map((stat, idx) => (
-                <StatCard key={stat.title} className="fade-in-up" style={{ animationDelay: `${0.1 + idx * 0.07}s` }}>
+                <StatCard
+                  key={stat.title}
+                  initial={{ opacity: 0, y: 32 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.6 + idx * 0.07, ease: [0.4, 0, 0.2, 1] }}
+                >
                   <StatTitle>{stat.title}</StatTitle>
                   <StatValue>{stat.value}</StatValue>
                 </StatCard>
@@ -298,16 +311,31 @@ const CodeSwitching = () => {
             </StatGrid>
           </Section>
 
-          <Section id="charts" className="fade-in-up" style={{ animationDelay: '0.2s' }}>
+          <Section
+            id="charts"
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ delay: 0.1 }}
+          >
             <SectionTitle>Language Distribution & Frequency</SectionTitle>
             <Paragraph>The following charts illustrate token distribution and switching behavior.</Paragraph>
             <ChartFlex>
-              <motion.div whileInView={{ opacity: 1, y: 0 }} initial={{ opacity: 0, y: 50 }} transition={{ duration: 0.6 }}>
+              <motion.div
+                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, y: 50 }}
+                transition={{ duration: 0.6 }}
+              >
                 <ChartCard>
                   <Pie data={langData} options={pieOptions} />
                 </ChartCard>
               </motion.div>
-              <motion.div whileInView={{ opacity: 1, y: 0 }} initial={{ opacity: 0, y: 50 }} transition={{ duration: 0.6, delay: 0.3 }}>
+              <motion.div
+                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, y: 50 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+              >
                 <ChartCard>
                   <Bar data={switchData} options={barOptions} />
                 </ChartCard>
@@ -315,14 +343,28 @@ const CodeSwitching = () => {
             </ChartFlex>
           </Section>
 
-          <Section id="insights" className="fade-in-up" style={{ animationDelay: '0.3s' }}>
+          <Section
+            id="insights"
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ delay: 0.2 }}
+          >
             <SectionTitle>Insights & Implications</SectionTitle>
             <Paragraph>
               Most switches occur mid-sentence and tag-level, acting as expressive social signals — supporting theories by Auer and Myers-Scotton.
             </Paragraph>
           </Section>
 
-          <Section id="applications" className="fade-in-up" style={{ animationDelay: '0.4s' }}>
+          <Section
+            id="applications"
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ delay: 0.3 }}
+          >
             <SectionTitle>Applications for AI & Society</SectionTitle>
             <Paragraph>
               These patterns can inform better multilingual NLP systems, teaching policy, and inclusive tech tools.
@@ -348,7 +390,14 @@ const CodeSwitching = () => {
             </Paragraph>
           </Section>
 
-          <Section id="examples" className="fade-in-up" style={{ animationDelay: '0.5s' }}>
+          <Section
+            id="examples"
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ delay: 0.4 }}
+          >
             <SectionTitle>Sample Tweets with Code-Switching</SectionTitle>
             <Paragraph>Highlighted examples from the dataset:</Paragraph>
             <SampleTweet>

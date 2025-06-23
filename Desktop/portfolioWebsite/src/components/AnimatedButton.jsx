@@ -1,7 +1,8 @@
 // components/AnimatedButton.jsx
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
-const AnimatedButton = styled.a`
+const AnimatedButton = styled(motion.a)`
   background: var(--accent);
   color: #fff;
   border-radius: var(--radius-full);
@@ -13,22 +14,30 @@ const AnimatedButton = styled.a`
   text-decoration: none;
   border: none;
   display: inline-block;
+  letter-spacing: 0.01em;
   transition: 
-    background var(--transition), 
-    box-shadow var(--transition), 
-    transform var(--transition);
+    background 0.3s, 
+    box-shadow 0.3s, 
+    transform 0.3s, 
+    color 0.3s;
 
   &:hover, &:focus {
     background: var(--accent-hover);
-    box-shadow: 0 8px 24px rgba(44,62,80,0.12);
-    transform: translateY(-2px) scale(1.04);
+    color: #fff;
+    box-shadow: 0 8px 24px rgba(44,62,80,0.16);
+    transform: translateY(-2px) scale(1.05);
     outline: none;
   }
 
   &:active {
-    transform: scale(0.98);
+    transform: scale(0.97);
     box-shadow: 0 1px 4px rgba(44,62,80,0.10);
   }
 `;
+
+AnimatedButton.defaultProps = {
+  whileHover: { scale: 1.05 },
+  whileTap: { scale: 0.97 }
+};
 
 export default AnimatedButton;

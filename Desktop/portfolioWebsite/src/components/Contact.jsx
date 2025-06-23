@@ -2,8 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import AnimatedCard from './AnimatedCard';
 import AnimatedButton from './AnimatedButton';
+import { motion } from 'framer-motion';
 
-const ContactSection = styled.section`
+const ContactSection = styled(motion.section)`
   background: linear-gradient(135deg, var(--background-alt) 60%, var(--background) 100%);
   padding: var(--space-2xl) 0 var(--space-3xl) 0;
   min-height: 60vh;
@@ -46,7 +47,6 @@ const CardWrapper = styled(AnimatedCard)`
   background: var(--background-elevated);
   border: 1.5px solid var(--card-border);
   box-shadow: var(--card-shadow);
-  animation: fadeInUp 0.9s cubic-bezier(0.4,0,0.2,1) both;
 `;
 
 const ContactButtons = styled.div`
@@ -66,7 +66,13 @@ const Note = styled.p`
 
 const Contact = () => {
   return (
-    <ContactSection id="contact">
+    <ContactSection
+      id="contact"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
+    >
       <Container>
         <SectionHeader>
           <h2>Get in Touch</h2>
@@ -75,10 +81,10 @@ const Contact = () => {
           </p>
         </SectionHeader>
 
-        <CardWrapper className="fade-in-up">
+        <CardWrapper>
           <ContactButtons>
             <AnimatedButton href="mailto:aahadvakani@gmail.com">
-             Email Me
+              Email Me
             </AnimatedButton>
             <AnimatedButton
               href="https://www.linkedin.com/in/abdul-aahad-vakani-793aa0234/"

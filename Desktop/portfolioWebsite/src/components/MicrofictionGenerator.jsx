@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import styled, { keyframes } from 'styled-components';
+import { motion } from 'framer-motion';
 import AnimatedCard from './AnimatedCard';
 import AnimatedButton from './AnimatedButton';
 
-const Section = styled.section`
+const Section = styled(motion.section)`
   background: var(--background);
   padding: var(--space-2xl) 0 var(--space-3xl) 0;
   min-height: 60vh;
@@ -21,7 +22,6 @@ const CardWrapper = styled(AnimatedCard)`
   padding: var(--space-2xl) var(--space-lg);
   text-align: center;
   position: relative;
-  animation: fadeInUp 0.9s cubic-bezier(0.4,0,0.2,1) both;
 `;
 
 const Heading = styled.h3`
@@ -109,6 +109,11 @@ const Prompt = styled.p`
   opacity: 0.92;
 `;
 
+const fadeInUp = {
+  initial: { opacity: 0, y: 40 },
+  animate: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.4, 0, 0.2, 1] } }
+};
+
 const MicrofictionGenerator = () => {
   const [story, setStory] = useState('');
   const [input, setInput] = useState('');
@@ -159,9 +164,15 @@ const MicrofictionGenerator = () => {
   };
 
   return (
-    <Section id="microfiction">
+    <Section
+      id="microfiction"
+      initial="initial"
+      whileInView="animate"
+      viewport={{ once: true, amount: 0.2 }}
+      variants={fadeInUp}
+    >
       <Container>
-        <CardWrapper className="fade-in-up">
+        <CardWrapper>
           <Heading>Microfiction Generator</Heading>
           <Prompt>
             What do you want to see in a story? Describe a mood, a moment, or a mystery.

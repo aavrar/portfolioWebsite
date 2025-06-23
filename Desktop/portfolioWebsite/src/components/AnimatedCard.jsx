@@ -1,16 +1,18 @@
 // components/AnimatedCard.jsx
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
-const AnimatedCard = styled.div`
+const AnimatedCard = styled(motion.div)`
   background: var(--card-bg);
   border: 1.5px solid var(--card-border);
   border-radius: var(--radius-lg);
   overflow: hidden;
   transition:
-    background var(--transition),
-    border var(--transition),
-    box-shadow var(--transition),
-    transform var(--transition);
+    background 0.3s,
+    border 0.3s,
+    box-shadow 0.3s,
+    transform 0.3s,
+    color 0.3s;
   position: relative;
   box-shadow: var(--card-shadow);
   padding: var(--space-lg);
@@ -26,12 +28,13 @@ const AnimatedCard = styled.div`
     position: relative;
     z-index: 1;
   }
-
-  /* Optional: fade-in-up animation for reveal */
-  &.fade-in-up {
-    opacity: 0;
-    animation: fadeInUp 0.8s cubic-bezier(0.4,0,0.2,1) forwards;
-  }
 `;
+
+AnimatedCard.defaultProps = {
+  initial: { opacity: 0, y: 32 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, amount: 0.2 },
+  transition: { duration: 0.7, ease: [0.4, 0, 0.2, 1] }
+};
 
 export default AnimatedCard;

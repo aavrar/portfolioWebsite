@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import AnimatedButton from './AnimatedButton';
+import { motion } from 'framer-motion';
 
-const HeroSection = styled.section`
+const HeroSection = styled(motion.section)`
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -32,7 +33,6 @@ const HeroContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  animation: fadeInUp 1s cubic-bezier(0.4,0,0.2,1) both;
 `;
 
 const ProfileImageContainer = styled.div`
@@ -153,21 +153,26 @@ const SocialIcon = styled.a`
 
 const Hero = () => {
   return (
-    <HeroSection id="hero">
-      <HeroContainer className="fade-in-up">
+    <HeroSection
+      id="hero"
+      initial={{ opacity: 0, y: 60 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1, ease: [0.4, 0, 0.2, 1] }}
+    >
+      <HeroContainer>
         <ProfileImageContainer>
           <ProfileImageWrapper>
             <ProfileImage src="assets/images/pfp.png" alt="Aahad Vakani" />
           </ProfileImageWrapper>
         </ProfileImageContainer>
         <HeroContent>
-          <Title>Hi, I'm Aahad Vakani</Title>
+          <Title>Aahad Vakani</Title>
           <AccentBar />
           <Tagline>
-            I build software at the intersection of technology and storytelling.
+          I craft purposeful tech with the instincts of a storyteller and the focus of an engineer.
           </Tagline>
           <Subheading>
-            Computer Science student, writer, and builder of narrative-driven tech. I believe the best ideas live where code and creativity meet.
+          I’m a software developer who builds clean, thoughtful systems with Python, React, and multiple frameworks, blending logic and creativity the way a good story blends setup, conflict, and payoff.
           </Subheading>
           <HeroButtons>
             <AnimatedButton href="#projects" onClick={e => {

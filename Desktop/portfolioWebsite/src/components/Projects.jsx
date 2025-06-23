@@ -2,8 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import AnimatedButton from './AnimatedButton';
 import AnimatedCard from './AnimatedCard';
+import { motion } from 'framer-motion';
 
-const ProjectsSection = styled.section`
+const ProjectsSection = styled(motion.section)`
   background: var(--background);
   padding: var(--space-2xl) 0 var(--space-3xl) 0;
 `;
@@ -50,7 +51,6 @@ const ProjectCard = styled(AnimatedCard)`
   flex-direction: column;
   padding: 0;
   overflow: hidden;
-  animation: fadeInUp 0.8s cubic-bezier(0.4,0,0.2,1) both;
 `;
 
 const ProjectImage = styled.div`
@@ -127,6 +127,11 @@ const ProjectLinks = styled.div`
   margin-top: auto;
 `;
 
+const fadeInUp = {
+  initial: { opacity: 0, y: 40 },
+  animate: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.4, 0, 0.2, 1] } }
+};
+
 const Projects = () => {
   const projects = [
     {
@@ -137,26 +142,17 @@ const Projects = () => {
       liveUrl: 'https://interactive-story-zeta.vercel.app/',
       githubUrl: 'https://github.com/aavrar/interactive-story'
     },
-    //{
-      //title: 'AI Image Generator',
-      //description: 'An AI-powered image generation tool that creates unique artwork based on text descriptions.',
-      //image: '/assets/projects/project2.jpg',
-      //tech: ['Python', 'TensorFlow', 'Flask', 'AWS'],
-      //liveUrl: '#',
-      //githubUrl: '#'
-    //},
-    //{
-      //title: 'Blockchain Explorer',
-      //description: 'A web-based blockchain explorer for tracking transactions and analyzing smart contracts.',
-      //image: '/assets/projects/project3.jpg',
-      //tech: ['Solidity', 'Web3.js', 'Vue.js', 'Ethereum'],
-      //liveUrl: '#',
-      //githubUrl: '#'
-    //}
+    // Add more projects as needed
   ];
 
   return (
-    <ProjectsSection id="projects">
+    <ProjectsSection
+      id="projects"
+      initial="initial"
+      whileInView="animate"
+      viewport={{ once: true, amount: 0.2 }}
+      variants={fadeInUp}
+    >
       <Container>
         <SectionHeader>
           <h2>Featured Projects</h2>
@@ -166,7 +162,7 @@ const Projects = () => {
         </SectionHeader>
         <ProjectsGrid>
           {projects.map((project, index) => (
-            <ProjectCard key={index} className="fade-in-up" style={{ animationDelay: `${0.1 + index * 0.08}s` }}>
+            <ProjectCard key={index}>
               <ProjectImage>
                 <img src={project.image} alt={project.title} />
               </ProjectImage>

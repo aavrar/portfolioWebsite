@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import AnimatedButton from './AnimatedButton';
+import { motion } from 'framer-motion';
 
-const FooterSection = styled.footer`
+const FooterSection = styled(motion.footer)`
   background: var(--background-elevated);
   padding: var(--space-xl) 0 var(--space-lg) 0;
   border-top: 1.5px solid var(--card-border);
@@ -70,29 +70,6 @@ const SocialLinks = styled.div`
   gap: var(--space-md);
 `;
 
-const SocialLink = styled(AnimatedButton)`
-  width: 44px;
-  height: 44px;
-  padding: 0;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.45rem;
-  background: var(--accent);
-  color: #fff;
-  border-radius: var(--radius-full);
-  box-shadow: 0 2px 8px rgba(44,62,80,0.08);
-  border: none;
-  transition: background var(--transition), color var(--transition), box-shadow var(--transition), transform var(--transition);
-
-  &:hover, &:focus {
-    background: var(--accent-hover);
-    color: #fff;
-    box-shadow: 0 8px 24px rgba(44,62,80,0.12);
-    transform: translateY(-2px) scale(1.08);
-    outline: none;
-  }
-`;
-
 const FooterLink = styled.a`
   color: var(--accent-light);
   text-decoration: none;
@@ -119,7 +96,12 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <FooterSection>
+    <FooterSection
+      initial={{ opacity: 0, y: 32 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.7, ease: [0.4, 0, 0.2, 1] }}
+    >
       <Container>
         <FooterContent>
           <FooterLeft>
