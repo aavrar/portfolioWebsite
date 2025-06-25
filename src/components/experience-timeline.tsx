@@ -24,7 +24,7 @@ const experiences = [
     title: "Resident Assistant",
     company: "DePauw University",
     location: "Greencastle, IN",
-    duration: "Jan 2024 - Present",
+    duration: "Dec 2024 - Present",
     type: "Resident Assistant",
     achievements: [
       "Fostered a supportive and inclusive residential community for 40+ students",
