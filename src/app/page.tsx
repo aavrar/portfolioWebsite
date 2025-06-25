@@ -4,8 +4,6 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import {
-  Github,
-  Linkedin,
   Mail,
   Download,
   Calendar,
@@ -14,7 +12,8 @@ import {
   FileCheck,
   GraduationCap,
   Target,
-  Music
+  Music,
+  ExternalLink
 } from "lucide-react"
 import Link from "next/link"
 import { FloatingContact } from "@/components/floating-contact"
@@ -22,6 +21,7 @@ import { ExperienceTimeline } from "@/components/experience-timeline"
 import { InteractiveProjects } from "@/components/interactive-projects"
 import { TerminalShowcase } from "@/components/terminal-showcase"
 import { BlogPostsGrid } from '../components/blog-posts-grid'
+import { EnhancedContact } from "@/components/enhanced-contact"
 
 export default function Portfolio() {
   return (
@@ -300,104 +300,7 @@ export default function Portfolio() {
           </div>
         </section>
 
-        {/* Contact Me Section */}
-        <section className="py-24">
-          <div className="mx-auto max-w-2xl text-center">
-            <div className="space-y-2 mb-8">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Let&apos;s Connect</h2>
-              <p className="text-muted-foreground md:text-xl/relaxed">
-                Interested in discussing opportunities? I&apos;d love to hear about your team&apos;s needs and how I can
-                contribute to your success.
-              </p>
-            </div>
-
-            <Card className="text-left">
-              <CardContent className="p-8">
-                <form className="space-y-6">
-                  <div className="grid gap-4 sm:grid-cols-2">
-                    <div className="space-y-2">
-                      <label htmlFor="name" className="text-sm font-medium">
-                        Name *
-                      </label>
-                      <input
-                        id="name"
-                        type="text"
-                        placeholder="Your name"
-                        className="w-full px-3 py-2 border border-input bg-background rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent transition-all"
-                        required
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <label htmlFor="email" className="text-sm font-medium">
-                        Email *
-                      </label>
-                      <input
-                        id="email"
-                        type="email"
-                        placeholder="your.email@company.com"
-                        className="w-full px-3 py-2 border border-input bg-background rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent transition-all"
-                        required
-                      />
-                    </div>
-                  </div>
-                  <div className="space-y-2">
-                    <label htmlFor="company" className="text-sm font-medium">
-                      Company
-                    </label>
-                    <input
-                      id="company"
-                      type="text"
-                      placeholder="Your company"
-                      className="w-full px-3 py-2 border border-input bg-background rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent transition-all"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <label htmlFor="subject" className="text-sm font-medium">
-                      Subject *
-                    </label>
-                    <input
-                      id="subject"
-                      type="text"
-                      placeholder="Job opportunity / Project inquiry"
-                      className="w-full px-3 py-2 border border-input bg-background rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent transition-all"
-                      required
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <label htmlFor="message" className="text-sm font-medium">
-                      Message *
-                    </label>
-                    <textarea
-                      id="message"
-                      rows={5}
-                      placeholder="Tell me about the role, your team, and what you're looking for..."
-                      className="w-full px-3 py-2 border border-input bg-background rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent resize-none transition-all"
-                      required
-                    />
-                  </div>
-                  <Button type="submit" size="lg" className="w-full">
-                    Send Message
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
-
-            <div className="mt-8 grid gap-4 sm:grid-cols-3 text-sm text-muted-foreground">
-              <div className="flex items-center justify-center gap-2">
-                <Mail className="h-4 w-4" />
-                <span>aahad@example.com</span>
-              </div>
-              <div className="flex items-center justify-center gap-2">
-                <span>📱</span>
-                <span>+1 (555) 123-4567</span>
-              </div>
-              <div className="flex items-center justify-center gap-2">
-                <span>📍</span>
-                <span>San Francisco, CA</span>
-              </div>
-            </div>
-          </div>
-        </section>
+        <EnhancedContact />
 
         {/* Footer */}
         <footer className="border-t py-12">
@@ -417,13 +320,13 @@ export default function Portfolio() {
                 <div className="flex space-x-4">
                   <Button variant="ghost" size="sm" asChild>
                     <Link href="https://github.com/aavrar" className="h-9 w-9 p-0">
-                      <Github className="h-4 w-4" />
+                      <ExternalLink className="h-4 w-4" />
                       <span className="sr-only">GitHub</span>
                     </Link>
                   </Button>
                   <Button variant="ghost" size="sm" asChild>
                     <Link href="https://www.linkedin.com/in/abdul-aahad-vakani-793aa0234/" className="h-9 w-9 p-0">
-                      <Linkedin className="h-4 w-4" />
+                      <ExternalLink className="h-4 w-4" />
                       <span className="sr-only">LinkedIn</span>
                     </Link>
                   </Button>
