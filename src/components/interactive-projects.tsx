@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Github, ExternalLink, ChevronDown, ChevronUp } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+import { on } from "events"
 
 const projects = [
   {
@@ -60,7 +61,50 @@ const projects = [
     teamSize: "Solo project",
     duration: "1.5 months",
     githubUrl: "https://github.com/aavrar/wrestling-db",
-  }
+  },
+  {
+    id: 3,
+    title: "AI Writing Assistant",
+    category: "Full-Stack",
+    technologies: [
+      "React",
+      "Next.js",
+      "Node.js",
+      "Express",
+      "Axios",
+      "Cheerio",
+      "Tailwind CSS",
+      "Lucide Icons"
+    ],
+    image: "/resources/images/betterGrammar.png",
+    shortDescription: "An intelligent writing companion that provides real-time grammar checking, AI-powered rewrites, tone adjustments, and text summarization—like Grammarly but with more AI superpowers.",
+    problem:
+      "Writers needed a comprehensive tool that goes beyond basic grammar checking to offer contextual AI suggestions, tone adjustments, and intelligent rewrites without relying on expensive premium services.",
+    solution:
+      "Built a Next.js writing assistant that integrates multiple AI services: LanguageTool for grammar checking, Hugging Face models for text rewriting and summarization, with a clean interface featuring floating toolbars, suggestion sidebars, and real-time scoring.",
+    results: [
+      "Real-time grammar and clarity scoring with visual feedback",
+      "AI-powered text rewriting with customizable tone options (professional, casual, confident, etc.)",
+      "Intelligent text summarization for long content",
+      "Floating toolbar for quick text actions on selected content",
+      "Undo/redo functionality with edit history tracking",
+      "Responsive design with mobile-friendly suggestion panels"
+    ],
+    teamSize: "Solo project",
+    duration: "1.5 months",
+    status: "🚧 In Development",
+    currentState: "AI features are semi-functional with basic rewriting and summarization working. Grammar checking and clarity scoring are operational.",
+    plannedFeatures: [
+      "Enhanced AI model integration for better text generation",
+      "Document templates and writing workflows",
+      "Export functionality (PDF, Word, etc.)",
+      "Collaboration features and sharing",
+      "Writing analytics and progress tracking",
+      "Plugin system for additional AI models",
+      "Offline mode with local processing"
+    ],
+    githubUrl: "https://github.com/aavrar/grammarly-better",
+  },
 ]
 
 const categories = ["All", "Full-Stack", "Frontend", "Backend"]
@@ -166,6 +210,34 @@ export function InteractiveProjects() {
                         ))}
                       </ul>
                     </div>
+
+                    {project.status && (
+                      <div>
+                        <h4 className="font-semibold mb-2">Status</h4>
+                        <p className="text-sm text-muted-foreground">{project.status}</p>
+                      </div>
+                    )}
+
+                    {project.currentState && (
+                      <div>
+                        <h4 className="font-semibold mb-2">Current State</h4>
+                        <p className="text-sm text-muted-foreground">{project.currentState}</p>
+                      </div>
+                    )}
+
+                    {project.plannedFeatures && project.plannedFeatures.length > 0 && (
+                      <div>
+                        <h4 className="font-semibold mb-2">Planned Features</h4>
+                        <ul className="space-y-1">
+                          {project.plannedFeatures.map((feature, index) => (
+                            <li key={index} className="flex items-start gap-2 text-sm text-muted-foreground">
+                              <span className="text-primary mt-1">•</span>
+                              <span>{feature}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
                   {/* {project.caseStudyUrl && (
                     <Button variant="outline" size="sm" className="gap-2" asChild>
                       <Link href={project.caseStudyUrl}>
