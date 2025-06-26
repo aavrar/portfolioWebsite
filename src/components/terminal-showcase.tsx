@@ -169,9 +169,9 @@ export function TerminalShowcase() {
       <div className="bg-gray-800 px-4 py-2 border-t border-gray-700">
         <div className="flex items-center justify-between text-xs text-gray-400">
           <div className="flex items-center gap-4">
-            <span>⚡ Next.js</span>
-            <span>📦 TypeScript</span>
-            <span>🔥 Hot Reload</span>
+            <span>Next.js</span>
+            <span>TypeScript</span>
+            <span>Hot Reload</span>
           </div>
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>

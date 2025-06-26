@@ -76,7 +76,7 @@ export default function Portfolio() {
 
                 <p className="max-w-[600px] text-muted-foreground md:text-xl leading-relaxed">
                 I am a undergraduate software developer with <strong>over 2 years</strong> of specialization in Python and React.
-                I build AI-native tools, from CLI agents to procedural narratives. With a dual background in computer science and writing, 
+                I build Full-Stack apps and AI-native tools, from CLI agents to procedural narratives. With a dual background in computer science and writing, 
                 I combine logic and language to make systems that <strong>think like you do</strong> <i>(or at least pretend to)</i>.
                 </p>
 
