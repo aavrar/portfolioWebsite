@@ -22,6 +22,9 @@ import { InteractiveProjects } from "@/components/interactive-projects"
 import { TerminalShowcase } from "@/components/terminal-showcase"
 import { BlogPostsGrid } from '../components/blog-posts-grid'
 import { EnhancedContact } from "@/components/enhanced-contact"
+import { CurrentlyWorkingOnCard } from "@/components/CurrentlyWorkingOnCard"
+import { CaffeineMeter } from "@/components/CaffeineMeter"
+
 
 export default function Portfolio() {
   return (
@@ -66,14 +69,15 @@ export default function Portfolio() {
               <div className="space-y-4">
                 <div className="space-y-2">
                   <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
-                    Aahad Vakani
+                  Aahad Vakani
                   </h1>
-                  <p className="text-xl font-semibold text-primary">Undergraduate Software Developer</p>
+                  <p className="text-xl font-semibold text-primary">The Developer you will regret not hiring.</p>
                 </div>
 
                 <p className="max-w-[600px] text-muted-foreground md:text-xl leading-relaxed">
-                Experienced web developer with <strong>over 2 years</strong> of building scalable applications across personal and academic projects. 
-                Specialized in the React and Python ecosystems, with a proven track record of delivering high-performance solutions.
+                I am a undergraduate software developer with <strong>over 2 years</strong> of specialization in Python and React.
+                I build AI-native tools, from CLI agents to procedural narratives. With a dual background in computer science and writing, 
+                I combine logic and language to make systems that <strong>think like you do</strong> <i>(or at least pretend to)</i>.
                 </p>
 
                 {/* Quick Facts */}
@@ -87,37 +91,44 @@ export default function Portfolio() {
                     <div className="text-sm text-muted-foreground">Years of Experience</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-primary">99.9%</div>
-                    <div className="text-sm text-muted-foreground">Uptime Achieved</div>
+                    <CaffeineMeter /> 
                   </div>
                 </div>
-              </div>
 
-              <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                <Button size="lg" className="gap-2" asChild>
-                  <Link href="resources/resume/resume.pdf" download>
-                    <Download className="h-4 w-4" />
-                    Download Resume
-                  </Link>
-                </Button>
-                <Button variant="outline" size="lg" asChild className="bg-background text-foreground">
-                  <Link href="https://calendly.com/avakani_2026-depauw" target="_blank" rel="noopener noreferrer">
-                    <Calendar className="h-4 w-4 mr-2" />
-                    Schedule Interview
-                  </Link>
-                </Button>
-              </div>
-            </div>
+                <div className="flex flex-col gap-2 min-[400px]:flex-row">
+               <Button size="lg" className="gap-2" asChild>
+                 <Link href="resources/resume/resume.pdf" download>
+                   <Download className="h-4 w-4" />
+                   Download Resume
+                 </Link>
+               </Button>
+               <Button variant="outline" size="lg" asChild className="bg-background text-foreground">
+                 <Link href="https://calendly.com/avakani_2026-depauw" target="_blank" rel="noopener noreferrer">
+                   <Calendar className="h-4 w-4 mr-2" />
+                   Schedule Interview
+                 </Link>
+               </Button>
+               </div>
+             </div>
+           </div>
 
-            <div className="flex items-center justify-center">
-              <TerminalShowcase />
-            </div>
-          </div>
+
+           <div className="flex items-center justify-center">
+             <TerminalShowcase />
+           </div>
+         </div>
+
         </section>
 
         {/* Recruiter-Friendly Quick Info */}
         <section className="py-16 bg-muted/30">
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            <Card className="text-center hover:shadow-md transition-shadow">
+              <CardContent className="pt-6">
+                <CurrentlyWorkingOnCard />
+              </CardContent>
+            </Card>
+
             <Card className="text-center hover:shadow-md transition-shadow">
               <CardContent className="pt-6">
                 <MapPin className="h-8 w-8 mx-auto mb-2 text-primary" />
@@ -142,15 +153,6 @@ export default function Portfolio() {
                 <h3 className="font-semibold">Education</h3>
                 <p className="text-sm text-muted-foreground">DePauw University</p>
                 <p className="text-xs text-muted-foreground">B.A. CS & English Writing, 2026</p>
-              </CardContent>
-            </Card>
-
-            <Card className="text-center hover:shadow-md transition-shadow">
-              <CardContent className="pt-6">
-                <Target className="h-8 w-8 mx-auto mb-2 text-primary" />
-                <h3 className="font-semibold">Current Focus</h3>
-                <p className="text-sm text-muted-foreground">AI-Driven Web Apps</p>
-                <p className="text-xs text-muted-foreground">R&D, Game Logic, UX</p>
               </CardContent>
             </Card>
           </div>
@@ -311,7 +313,7 @@ export default function Portfolio() {
                   <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-primary-foreground font-bold text-lg">
                     AV
                   </div>
-                  <span className="font-bold text-xl">Aahad Vakani</span>
+                  <span className="font-bold text-xl">Aahad: The Developer you will regret not hiring.</span>
                 </div>
                 <p className="text-muted-foreground max-w-md">
                   Full-Stack Developer specializing in React, Next.js, and modern web technologies. Building scalable
