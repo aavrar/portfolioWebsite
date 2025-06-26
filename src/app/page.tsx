@@ -11,7 +11,6 @@ import {
   Clock,
   FileCheck,
   GraduationCap,
-  Target,
   Music,
   ExternalLink
 } from "lucide-react"
@@ -24,7 +23,7 @@ import { BlogPostsGrid } from '../components/blog-posts-grid'
 import { EnhancedContact } from "@/components/enhanced-contact"
 import { CurrentlyWorkingOnCard } from "@/components/CurrentlyWorkingOnCard"
 import { CaffeineMeter } from "@/components/CaffeineMeter"
-
+import { AIChatWidget } from "@/components/AIChatWidget"
 
 export default function Portfolio() {
   return (
@@ -303,6 +302,7 @@ export default function Portfolio() {
         </section>
 
         <EnhancedContact />
+        <AIChatWidget />
 
         {/* Footer */}
         <footer className="border-t py-12">
