@@ -122,7 +122,7 @@ const projects = [
       "Radix UI",
       "Recharts"
     ],
-    image: "/resources/images/switchboard.png",
+    image: "/resources/images/switchBoard.png",
     shortDescription: "A community-driven platform for collecting, analyzing, and sharing code-switching examples across multiple languages, providing comprehensive analytics for linguistic research.",
     problem:
       "Linguists and researchers lacked a centralized platform to collect, analyze, and share real-world code-switching examples. Existing tools were either academic-only, language-specific, or didn't provide comprehensive analytics for multilingual communication patterns.",
