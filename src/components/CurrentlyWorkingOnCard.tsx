@@ -8,7 +8,8 @@ export function CurrentlyWorkingOnCard() {
   const [currentWork, setCurrentWork] = useState<string | null>(null)
 
   useEffect(() => {
-    fetch("https://gist.githubusercontent.com/aavrar/17cc99de8906348c7f4eefa40f7f0b14/raw/3ec84513383e2202baa66c94e6bf67902dd719a6/currently-working-on.json")
+    const url = `https://gist.githubusercontent.com/aavrar/17cc99de8906348c7f4eefa40f7f0b14/raw/currently-working-on.json?t=${Date.now()}`
+    fetch(url)
       .then((res) => res.json())
       .then((data) => setCurrentWork(data.currently))
       .catch(() => setCurrentWork("Unable to fetch update."))
