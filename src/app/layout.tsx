@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://aahadv.dev",
-    title: "Aahad Vakani - Full-Stack Developer",
+    title: "Aahad Vakani - Portfolio",
     description: "Experienced Full-Stack Developer specializing in React, Next.js, and modern JavaScript frameworks.",
     siteName: "Aahad Vakani Portfolio",
     images: [
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Aahad Vakani - Full-Stack Developer",
+    title: "Aahad Vakani - Portfolio",
     description: "Experienced Full-Stack Developer specializing in React, Next.js, and modern JavaScript frameworks.",
     creator: "@aahadv",
     images: ["/og-image.jpg"],
