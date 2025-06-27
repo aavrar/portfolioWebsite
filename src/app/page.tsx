@@ -43,14 +43,17 @@ export default function Portfolio() {
             <Link href="#about" className="transition-colors hover:text-primary">
               About
             </Link>
-            <Link href="#experience" className="transition-colors hover:text-primary">
-              Experience
-            </Link>
             <Link href="#projects" className="transition-colors hover:text-primary">
               Projects
             </Link>
+            <Link href="#experience" className="transition-colors hover:text-primary">
+              Experience
+            </Link>
             <Link href="#writing" className="transition-colors hover:text-primary">
               Writing
+            </Link>
+            <Link href="#contact" className="transition-colors hover:text-primary">
+              Contact Me
             </Link>
           </nav>
 
@@ -219,6 +222,18 @@ export default function Portfolio() {
           </div>
         </section>
 
+        {/* Interactive Projects Section */}
+        <section id="projects" className="py-24 bg-muted/50">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl mb-4">Featured Projects</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto md:text-xl">
+            Sure, I’ve built the usual suspects, <i>calculators, chatbots, you name it</i>, but let’s skip the greatest hits and get to the good stuff. 
+            These projects are my personal favorites, each one a little different, a little ambitious, and a lot more interesting.
+            </p>
+          </div>
+          <InteractiveProjects />
+        </section>
+
         {/* Professional Experience Timeline */}
         <section id="experience" className="py-24">
           <div className="text-center mb-12">
@@ -230,17 +245,6 @@ export default function Portfolio() {
           <ExperienceTimeline />
         </section>
 
-        {/* Interactive Projects Section */}
-        <section id="projects" className="py-24 bg-muted/50">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl mb-4">Featured Projects</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto md:text-xl">
-              Selected projects demonstrating technical expertise, problem-solving abilities, and measurable business
-              impact
-            </p>
-          </div>
-          <InteractiveProjects />
-        </section>
 
       {/* Writing Section */}
       <section id="writing" className="py-24">
@@ -301,7 +305,9 @@ export default function Portfolio() {
           </div>
         </section>
 
+        <section id="contact" className="py-24">
         <EnhancedContact />
+        </section>
         <AIChatWidget />
 
         {/* Footer */}

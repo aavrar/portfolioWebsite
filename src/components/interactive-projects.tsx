@@ -12,11 +12,61 @@ import { on } from "events"
 const projects = [
   {
     id: 1,
+    title: "SwitchBoard - Code-Switching Corpus Platform",
+    category: "Full-Stack",
+    technologies: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Node.js",
+      "Express",
+      "PostgreSQL",
+      "Prisma ORM",
+      "Supabase",
+      "Tailwind CSS",
+      "Radix UI",
+      "Recharts"
+    ],
+    image: "/resources/images/switchBoard.png",
+    shortDescription: `Estimated time before a working demo: 2 weeks.
+    A community-driven platform for collecting, analyzing, and sharing code-switching examples across multiple languages, providing comprehensive analytics for linguistic research.`,
+    problem:
+      "Linguists and researchers lacked a centralized platform to collect, analyze, and share real-world code-switching examples. Existing tools were either academic-only, language-specific, or didn't provide comprehensive analytics for multilingual communication patterns.",
+    solution:
+      "Built a full-stack web application with a Next.js frontend and Express.js backend that enables users to submit code-switching examples with contextual metadata, search and filter existing examples, and view detailed analytics through interactive dashboards showing language pair statistics, platform distribution, and regional trends.",
+    results: [
+      "Complete RESTful API with search, filtering, and analytics endpoints",
+      "Interactive dashboard with real-time charts showing language pair trends",
+      "Comprehensive example submission system with metadata collection",
+      "Advanced search functionality across text content and contextual data",
+      "Analytics for platform distribution, regional analysis, and time-based trends",
+      "Responsive design optimized for both desktop and mobile research workflows",
+      "Extensible database schema supporting any language combination"
+    ],
+    teamSize: "Solo project",
+    duration: "1.5 months",
+    status: "✅ Completed (Phase 1 of 3)",
+    currentState: "Fully functional backend API with complete frontend UI. All core features implemented including data submission, search, filtering. Analytics dashboard is still buggy.",
+    plannedFeatures: [
+      "User authentication and authorization system",
+      "Advanced linguistic annotations and tagging",
+      "Export functionality for research data (CSV, JSON, XML)",
+      "Machine learning integration for automatic language detection",
+      "Collaborative annotation features for research teams",
+      "Integration with external linguistic databases",
+      "Real-time collaboration tools and notifications",
+      "Advanced data visualization and reporting tools"
+    ],
+    githubUrl: "https://github.com/aavrar/CodeBoard",
+  },
+  {
+    id: 2,
     title: "Procedural Story Adventure Engine",
     category: "Full-Stack",
     technologies: ["React","FastAPI","Python","Pydantic","Modern CSS","Uvicorn","HuggingFace Transformers","OpenAI","Axios"],
     image: "/resources/images/interactiveStory.png",
-    shortDescription: "A browser-based, procedurally generated text adventure where every playthrough is a fresh world.",
+    shortDescription: `Estimated time before a working demo: 2 weeks.
+A browser-based, procedurally generated text adventure where every playthrough is a fresh world.`,
     problem:
       "Players needed an engaging, procedurally generated text adventure with dynamic maps, AI-powered NPCs, and fuzzy command matching.",
     solution:
@@ -33,7 +83,7 @@ const projects = [
     liveUrl: "https://interactive-story-zeta.vercel.app/",
   },
   {
-    id: 2,
+    id: 3,
     title: "WrestleStats: Pro Stats & Profiles",
     category: "Full-Stack",
     technologies: [
@@ -63,7 +113,7 @@ const projects = [
     githubUrl: "https://github.com/aavrar/wrestling-db",
   },
   {
-    id: 3,
+    id: 4,
     title: "AI Writing Assistant",
     category: "Full-Stack",
     technologies: [
@@ -104,54 +154,6 @@ const projects = [
       "Offline mode with local processing"
     ],
     githubUrl: "https://github.com/aavrar/grammarly-better",
-  },
-  {
-    id: 4,
-    title: "SwitchBoard - Code-Switching Corpus Platform",
-    category: "Full-Stack",
-    technologies: [
-      "React",
-      "Next.js",
-      "TypeScript",
-      "Node.js",
-      "Express",
-      "PostgreSQL",
-      "Prisma ORM",
-      "Supabase",
-      "Tailwind CSS",
-      "Radix UI",
-      "Recharts"
-    ],
-    image: "/resources/images/switchBoard.png",
-    shortDescription: "A community-driven platform for collecting, analyzing, and sharing code-switching examples across multiple languages, providing comprehensive analytics for linguistic research.",
-    problem:
-      "Linguists and researchers lacked a centralized platform to collect, analyze, and share real-world code-switching examples. Existing tools were either academic-only, language-specific, or didn't provide comprehensive analytics for multilingual communication patterns.",
-    solution:
-      "Built a full-stack web application with a Next.js frontend and Express.js backend that enables users to submit code-switching examples with contextual metadata, search and filter existing examples, and view detailed analytics through interactive dashboards showing language pair statistics, platform distribution, and regional trends.",
-    results: [
-      "Complete RESTful API with search, filtering, and analytics endpoints",
-      "Interactive dashboard with real-time charts showing language pair trends",
-      "Comprehensive example submission system with metadata collection",
-      "Advanced search functionality across text content and contextual data",
-      "Analytics for platform distribution, regional analysis, and time-based trends",
-      "Responsive design optimized for both desktop and mobile research workflows",
-      "Extensible database schema supporting any language combination"
-    ],
-    teamSize: "Solo project",
-    duration: "1.5 months",
-    status: "✅ Completed (Phase 1 of 3)",
-    currentState: "Fully functional backend API with complete frontend UI. All core features implemented including data submission, search, filtering. Analytics dashboard is still buggy.",
-    plannedFeatures: [
-      "User authentication and authorization system",
-      "Advanced linguistic annotations and tagging",
-      "Export functionality for research data (CSV, JSON, XML)",
-      "Machine learning integration for automatic language detection",
-      "Collaborative annotation features for research teams",
-      "Integration with external linguistic databases",
-      "Real-time collaboration tools and notifications",
-      "Advanced data visualization and reporting tools"
-    ],
-    githubUrl: "https://github.com/aavrar/CodeBoard",
   },
 ]
 
