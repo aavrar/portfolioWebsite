@@ -1,5 +1,3 @@
-// components/Portfolio.tsx
-
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -52,14 +50,27 @@ export default function Portfolio() {
             <Link href="#writing" className="transition-colors hover:text-primary">
               Writing
             </Link>
+            {/*
+             <Link href="/compare-concepts" className="transition-colors hover:text-primary bg-primary/10 px-3 py-1 rounded-md">
+              🎨 Design Demos
+            </Link>
+            */}
             <Link href="#contact" className="transition-colors hover:text-primary">
               Contact Me
             </Link>
           </nav>
 
-          <Button asChild>
-            <Link href="#projects">View Projects</Link>
-          </Button>
+          <div className="flex gap-2">
+             {/*
+            <Button variant="outline" asChild>
+              <Link href="/compare-concepts">Design Demos</Link>
+            </Button>
+            
+            <Button asChild className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white border-0">
+              <Link href="/portfolio-v3">🚀 New Portfolio</Link>
+            </Button>
+            */}
+          </div>
         </div>
       </header>
 

@@ -61,6 +61,48 @@ const projects = [
   },
   {
     id: 2,
+    title: "SwitchPrint Library",
+    category: "Machine Learning / NLP",
+    technologies: [
+      "Python",
+      "PyTorch",
+      "Transformers",
+      "FAISS",
+      "SQLite",
+      "Streamlit",
+      "Flask",
+      "scikit-learn",
+      "Plotly"
+    ],
+    image: "/resources/images/switchprintai.png",
+    shortDescription: "An advanced NLP library that detects and analyzes multilingual code-switching patterns in text, enabling more natural multilingual AI interactions and linguistic analysis.",
+    problem: "Existing language processing tools struggle with mixed-language text, leading to poor performance in multilingual contexts where code-switching is common, such as in social media, messaging, and informal communication.",
+    solution: "Developed a Python library that uses machine learning to accurately detect and analyze code-switching patterns at multiple levels (word, phrase, sentence) with adaptive context windows, supporting both native scripts and romanized text across 12+ writing systems.",
+    results: [
+      "73% accuracy on diverse multilingual test cases",
+      "Support for 12+ native scripts and 40+ underserved languages",
+      "43-200x performance improvement over baseline",
+      "Comprehensive caching system for repeated analysis",
+      "100+ function words with high accuracy detection",
+      "Adaptive context windows that adjust based on text complexity"
+    ],
+    teamSize: "Solo project",
+    duration: "3 months",
+    status: "🚧 In Development",
+    currentState: "Core functionality is implemented and tested with basic language support. The library can detect and analyze code-switching patterns with good accuracy in supported languages. Performance optimizations have been implemented, but there's room for improvement in handling edge cases and expanding language coverage.",
+    plannedFeatures: [
+      "Expand to support more regional dialects and languages",
+      "Implement dynamic context window sizing based on text complexity",
+      "Add machine learning-based confidence scoring",
+      "Develop pre-trained models for common language pairs",
+      "Create a visualization dashboard for code-switching patterns",
+      "Build a browser extension for real-time detection",
+      "Develop API service for cloud deployment"
+    ],
+    githubUrl: "https://github.com/aavrar/switchprintlibrary"
+  },
+  {
+    id: 3,
     title: "Procedural Story Adventure Engine",
     category: "Full-Stack",
     technologies: ["React","FastAPI","Python","Pydantic","Modern CSS","Uvicorn","HuggingFace Transformers","OpenAI","Axios"],
@@ -83,7 +125,7 @@ A browser-based, procedurally generated text adventure where every playthrough i
     liveUrl: "https://interactive-story-zeta.vercel.app/",
   },
   {
-    id: 3,
+    id: 4,
     title: "WrestleStats: Pro Stats & Profiles",
     category: "Full-Stack",
     technologies: [
@@ -111,49 +153,6 @@ A browser-based, procedurally generated text adventure where every playthrough i
     teamSize: "Solo project",
     duration: "1.5 months",
     githubUrl: "https://github.com/aavrar/wrestling-db",
-  },
-  {
-    id: 4,
-    title: "AI Writing Assistant",
-    category: "Full-Stack",
-    technologies: [
-      "React",
-      "Next.js",
-      "Node.js",
-      "Express",
-      "Axios",
-      "Cheerio",
-      "Tailwind CSS",
-      "Lucide Icons"
-    ],
-    image: "/resources/images/betterGrammar.png",
-    shortDescription: "An intelligent writing companion that provides real-time grammar checking, AI-powered rewrites, tone adjustments, and text summarization—like Grammarly but with more AI superpowers.",
-    problem:
-      "Writers needed a comprehensive tool that goes beyond basic grammar checking to offer contextual AI suggestions, tone adjustments, and intelligent rewrites without relying on expensive premium services.",
-    solution:
-      "Built a Next.js writing assistant that integrates multiple AI services: LanguageTool for grammar checking, Hugging Face models for text rewriting and summarization, with a clean interface featuring floating toolbars, suggestion sidebars, and real-time scoring.",
-    results: [
-      "Real-time grammar and clarity scoring with visual feedback",
-      "AI-powered text rewriting with customizable tone options (professional, casual, confident, etc.)",
-      "Intelligent text summarization for long content",
-      "Floating toolbar for quick text actions on selected content",
-      "Undo/redo functionality with edit history tracking",
-      "Responsive design with mobile-friendly suggestion panels"
-    ],
-    teamSize: "Solo project",
-    duration: "1.5 months",
-    status: "🚧 In Development",
-    currentState: "AI features are semi-functional with basic rewriting and summarization working. Grammar checking and clarity scoring are operational.",
-    plannedFeatures: [
-      "Enhanced AI model integration for better text generation",
-      "Document templates and writing workflows",
-      "Export functionality (PDF, Word, etc.)",
-      "Collaboration features and sharing",
-      "Writing analytics and progress tracking",
-      "Plugin system for additional AI models",
-      "Offline mode with local processing"
-    ],
-    githubUrl: "https://github.com/aavrar/grammarly-better",
   },
 ]
 
