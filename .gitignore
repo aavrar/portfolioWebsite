@@ -70,3 +70,7 @@ yarn-error.log*
 next-env.d.ts
 
 .env.local
+
+# v3 portfolio components
+src/components/_v3/
+src/app/portfolio-v3/

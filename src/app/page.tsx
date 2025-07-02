@@ -110,7 +110,7 @@ export default function Portfolio() {
 
                 <div className="flex flex-col gap-2 min-[400px]:flex-row">
                <Button size="lg" className="gap-2" asChild>
-                 <Link href="resources/resume/resume.pdf" download>
+                 <Link href="resources/resume/resumej25.pdf" download>
                    <Download className="h-4 w-4" />
                    Download Resume
                  </Link>
