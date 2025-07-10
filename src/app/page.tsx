@@ -20,7 +20,6 @@ import { TerminalShowcase } from "@/components/terminal-showcase"
 import { BlogPostsGrid } from '../components/blog-posts-grid'
 import { EnhancedContact } from "@/components/enhanced-contact"
 import { CurrentlyWorkingOnCard } from "@/components/CurrentlyWorkingOnCard"
-import { CaffeineMeter } from "@/components/CaffeineMeter"
 import { AIChatWidget } from "@/components/AIChatWidget"
 
 export default function Portfolio() {
@@ -90,7 +89,7 @@ export default function Portfolio() {
                 <p className="max-w-[600px] text-muted-foreground md:text-xl leading-relaxed">
                 I am a undergraduate software developer with <strong>over 2 years</strong> of specialization in Python and React.
                 I build Full-Stack apps and AI-native tools, from CLI agents to procedural narratives. With a dual background in computer science and writing, 
-                I combine logic and language to make systems that <strong>think like you do</strong> <i>(or at least pretend to, ask the little robot guy if you don't believe me)</i>.
+                I combine logic and language to make systems that <strong>think like you do</strong>.
                 </p>
 
                 {/* Quick Facts */}
@@ -104,7 +103,8 @@ export default function Portfolio() {
                     <div className="text-sm text-muted-foreground">Years of Experience</div>
                   </div>
                   <div className="text-center">
-                    <CaffeineMeter /> 
+                    <div className="text-2xl font-bold text-primary">AI/ML</div>
+                    <div className="text-sm text-muted-foreground">Focus Area</div>
                   </div>
                 </div>
 
@@ -165,7 +165,7 @@ export default function Portfolio() {
                 <GraduationCap className="h-8 w-8 mx-auto mb-2 text-primary" />
                 <h3 className="font-semibold">Education</h3>
                 <p className="text-sm text-muted-foreground">DePauw University</p>
-                <p className="text-xs text-muted-foreground">B.A. CS & English Writing, 2026</p>
+                <p className="text-xs text-muted-foreground">Bachelor's Degree in Computer Science & English Writing, 2026</p>
               </CardContent>
             </Card>
           </div>

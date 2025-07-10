@@ -35,7 +35,7 @@ const experiences = [
     technologies: ["Leadership", "Event Planning", "Conflict Resolution", "Community Building"],
   },
   {
-    title: "Bachelor of Arts in Computer Science and English Writing",
+    title: "Bachelor's Degree in Computer Science and English Writing",
     company: "DePauw University",
     location: "Greencastle, IN",
     duration: "Aug 2022 - May 2026",
