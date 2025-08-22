@@ -21,6 +21,7 @@ import { BlogPostsGrid } from '../components/blog-posts-grid'
 import { EnhancedContact } from "@/components/enhanced-contact"
 import { CurrentlyWorkingOnCard } from "@/components/CurrentlyWorkingOnCard"
 import { AIChatWidget } from "@/components/AIChatWidget"
+import { FacultyReferences } from "@/components/faculty-references"
 
 export default function Portfolio() {
   return (
@@ -48,6 +49,9 @@ export default function Portfolio() {
             </Link>
             <Link href="#writing" className="transition-colors hover:text-primary">
               Writing
+            </Link>
+            <Link href="#references" className="transition-colors hover:text-primary">
+              References
             </Link>
             {/*
              <Link href="/compare-concepts" className="transition-colors hover:text-primary bg-primary/10 px-3 py-1 rounded-md">
@@ -270,6 +274,11 @@ export default function Portfolio() {
           </div>
          <BlogPostsGrid />
          </div>
+        </section>
+
+        <section id="references" className="py-24">
+        {/* Faculty References Section */}
+        <FacultyReferences />
         </section>
 
         {/* Enhanced Resume Section */}
