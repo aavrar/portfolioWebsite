@@ -16,7 +16,7 @@ import Link from "next/link"
 import { FloatingContact } from "@/components/floating-contact"
 import { ExperienceTimeline } from "@/components/experience-timeline"
 import { InteractiveProjects } from "@/components/interactive-projects"
-import { TerminalShowcase } from "@/components/terminal-showcase"
+import { CodeSwitchingShowcase } from "@/components/code-switching-showcase"
 import { BlogPostsGrid } from '../components/blog-posts-grid'
 import { EnhancedContact } from "@/components/enhanced-contact"
 import { CurrentlyWorkingOnCard } from "@/components/CurrentlyWorkingOnCard"
@@ -130,9 +130,9 @@ export default function Portfolio() {
            </div>
 
 
-           <div className="flex items-center justify-center">
-             <TerminalShowcase />
-           </div>
+           <div className="flex items-center justify-center max-w-7xl mx-auto">
+            <CodeSwitchingShowcase />
+          </div>
          </div>
 
         </section>
