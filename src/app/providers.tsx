@@ -1,13 +1,11 @@
 'use client'
 
-import { usePathname, useSearchParams } from "next/navigation"
+import { SessionProvider } from "next-auth/react"
 import { useEffect } from "react"
-import { usePostHog } from 'posthog-js/react'
-
 import posthog from 'posthog-js'
 import { PostHogProvider as PHProvider } from 'posthog-js/react'
 
-export function PostHogProvider({ children }: { children: React.ReactNode }) {
+function PostHogAnalyticsProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY as string, {
       api_host: process.env.NEXT_PUBLIC_POSTHOG_HOST || 'https://us.i.posthog.com',
@@ -20,5 +18,15 @@ export function PostHogProvider({ children }: { children: React.ReactNode }) {
     <PHProvider client={posthog}>
       {children}
     </PHProvider>
+  )
+}
+
+export function Providers({ children }: { children: React.ReactNode }) {
+  return (
+    <SessionProvider>
+      <PostHogAnalyticsProvider>
+        {children}
+      </PostHogAnalyticsProvider>
+    </SessionProvider>
   )
 }
