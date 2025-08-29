@@ -17,7 +17,7 @@ import { FloatingContact } from "@/components/floating-contact"
 import { ExperienceTimeline } from "@/components/experience-timeline"
 import { InteractiveProjects } from "@/components/interactive-projects"
 import { CodeSwitchingShowcase } from "@/components/code-switching-showcase"
-import { BlogPostsGrid } from '../components/blog-posts-grid'
+import { BlogPostsCarousel } from '../components/blog-posts-carousel'
 import { EnhancedContact } from "@/components/enhanced-contact"
 import { CurrentlyWorkingOnCard } from "@/components/CurrentlyWorkingOnCard"
 import { AIChatWidget } from "@/components/AIChatWidget"
@@ -46,11 +46,11 @@ export default function Portfolio() {
             <Link href="#projects" className="transition-colors hover:text-primary">
               Projects
             </Link>
+            <Link href="#writing" className="transition-colors hover:text-primary">
+              Writing & Research
+            </Link>
             <Link href="#experience" className="transition-colors hover:text-primary">
               Experience
-            </Link>
-            <Link href="#writing" className="transition-colors hover:text-primary">
-              Writing
             </Link>
             <Link href="#references" className="transition-colors hover:text-primary">
               References
@@ -245,12 +245,27 @@ export default function Portfolio() {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl mb-4">Featured Projects</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto md:text-xl">
-            Sure, I’ve built the usual suspects, <i>calculators, chatbots, you name it</i>, but let’s skip the greatest hits and get to the good stuff. 
+            Sure, I've built the usual suspects, <i>calculators, chatbots, you name it</i>, but let's skip the greatest hits and get to the good stuff. 
             These projects are my personal favorites, each one a little different, a little ambitious, and a lot more interesting.
             </p>
           </div>
           <InteractiveProjects />
         </section>
+
+        {/* Writing Section */}
+        <section id="writing" className="py-24">
+          <div className="container">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <div className="space-y-2">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Writing & Research</h2>
+                <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                  Sharing insights about tech trends, AI/ML, and Literature.
+                </p>
+              </div>
+            </div>
+           <BlogPostsCarousel />
+           </div>
+          </section>
 
         {/* Professional Experience Timeline */}
         <section id="experience" className="py-24">
@@ -261,22 +276,6 @@ export default function Portfolio() {
             </p>
           </div>
           <ExperienceTimeline />
-        </section>
-
-
-      {/* Writing Section */}
-      <section id="writing" className="py-24">
-        <div className="container">
-          <div className="flex flex-col items-center justify-center space-y-4 text-center">
-            <div className="space-y-2">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Writing & Research</h2>
-              <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Sharing insights about tech trends, AI/ML, and Literature.
-              </p>
-            </div>
-          </div>
-         <BlogPostsGrid />
-         </div>
         </section>
 
         <section id="references" className="py-24">

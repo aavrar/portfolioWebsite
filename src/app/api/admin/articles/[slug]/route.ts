@@ -1,35 +1,37 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getServerSession } from 'next-auth/next'
-const authOptions = {
-  providers: [
-    {
-      id: "credentials",
-      name: "Credentials",
-      type: "credentials",
-      credentials: {
-        username: { label: "Username", type: "text" },
-        password: { label: "Password", type: "password" }
-      },
-      async authorize(credentials: any) {
-        if (credentials?.username === process.env.ADMIN_USERNAME && credentials?.password === process.env.ADMIN_PASSWORD) {
-          return { id: "1", name: "Admin", email: "admin@example.com" }
-        }
-        return null
-      }
-    }
-  ],
-  secret: process.env.NEXTAUTH_SECRET,
-}
+import NextAuth from "next-auth"
+import CredentialsProvider from "next-auth/providers/credentials"
 import { getPostBySlug } from '@/lib/blog'
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 
+const authOptions = {
+  providers: [
+    CredentialsProvider({
+      name: "Credentials",
+      credentials: {
+        username: { label: "Username", type: "text", placeholder: "admin" },
+        password: { label: "Password", type: "password" }
+      },
+      async authorize(credentials, req) {
+        if (credentials?.username === process.env.ADMIN_USERNAME && credentials?.password === process.env.ADMIN_PASSWORD) {
+          return { id: "1", name: "Admin", email: "admin@example.com" }
+        } else {
+          return null
+        }
+      }
+    })
+  ],
+  secret: process.env.NEXTAUTH_SECRET,
+}
+
 const postsDirectory = path.join(process.cwd(), 'content/blog')
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { slug: string } }
+  { params }: { params: Promise<{ slug: string }> }
 ) {
   try {
     const session = await getServerSession(authOptions)
@@ -38,7 +40,8 @@ export async function GET(
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 
-    const post = getPostBySlug(params.slug)
+    const { slug } = await params
+    const post = getPostBySlug(slug)
     
     if (!post) {
       return NextResponse.json({ error: 'Article not found' }, { status: 404 })
@@ -53,7 +56,7 @@ export async function GET(
 
 export async function PUT(
   request: NextRequest,
-  { params }: { params: { slug: string } }
+  { params }: { params: Promise<{ slug: string }> }
 ) {
   try {
     const session = await getServerSession(authOptions)
@@ -62,13 +65,14 @@ export async function PUT(
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 
+    const { slug } = await params
     const { title, content, excerpt, tags, newSlug } = await request.json()
 
     if (!title || !content) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 })
     }
 
-    const oldFilePath = path.join(postsDirectory, `${params.slug}.md`)
+    const oldFilePath = path.join(postsDirectory, `${slug}.md`)
     
     if (!fs.existsSync(oldFilePath)) {
       return NextResponse.json({ error: 'Article not found' }, { status: 404 })
@@ -90,11 +94,11 @@ export async function PUT(
     const markdownContent = matter.stringify(content, frontmatter)
 
     // Handle slug change
-    const finalSlug = newSlug || params.slug
+    const finalSlug = newSlug || slug
     const newFilePath = path.join(postsDirectory, `${finalSlug}.md`)
 
     // If slug changed, delete old file
-    if (newSlug && newSlug !== params.slug) {
+    if (newSlug && newSlug !== slug) {
       if (fs.existsSync(newFilePath)) {
         return NextResponse.json({ error: 'Article with new slug already exists' }, { status: 409 })
       }
@@ -116,7 +120,7 @@ export async function PUT(
 
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: { slug: string } }
+  { params }: { params: Promise<{ slug: string }> }
 ) {
   try {
     const session = await getServerSession(authOptions)
@@ -125,7 +129,8 @@ export async function DELETE(
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 
-    const filePath = path.join(postsDirectory, `${params.slug}.md`)
+    const { slug } = await params
+    const filePath = path.join(postsDirectory, `${slug}.md`)
     
     if (!fs.existsSync(filePath)) {
       return NextResponse.json({ error: 'Article not found' }, { status: 404 })

@@ -1,29 +1,31 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getServerSession } from 'next-auth/next'
-const authOptions = {
-  providers: [
-    {
-      id: "credentials",
-      name: "Credentials",
-      type: "credentials",
-      credentials: {
-        username: { label: "Username", type: "text" },
-        password: { label: "Password", type: "password" }
-      },
-      async authorize(credentials: any) {
-        if (credentials?.username === process.env.ADMIN_USERNAME && credentials?.password === process.env.ADMIN_PASSWORD) {
-          return { id: "1", name: "Admin", email: "admin@example.com" }
-        }
-        return null
-      }
-    }
-  ],
-  secret: process.env.NEXTAUTH_SECRET,
-}
+import NextAuth from "next-auth"
+import CredentialsProvider from "next-auth/providers/credentials"
 import { getAllPosts } from '@/lib/blog'
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
+
+const authOptions = {
+  providers: [
+    CredentialsProvider({
+      name: "Credentials",
+      credentials: {
+        username: { label: "Username", type: "text", placeholder: "admin" },
+        password: { label: "Password", type: "password" }
+      },
+      async authorize(credentials, req) {
+        if (credentials?.username === process.env.ADMIN_USERNAME && credentials?.password === process.env.ADMIN_PASSWORD) {
+          return { id: "1", name: "Admin", email: "admin@example.com" }
+        } else {
+          return null
+        }
+      }
+    })
+  ],
+  secret: process.env.NEXTAUTH_SECRET,
+}
 
 const postsDirectory = path.join(process.cwd(), 'content/blog')
 
