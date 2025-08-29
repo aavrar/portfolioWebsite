@@ -22,8 +22,10 @@ import { EnhancedContact } from "@/components/enhanced-contact"
 import { CurrentlyWorkingOnCard } from "@/components/CurrentlyWorkingOnCard"
 import { AIChatWidget } from "@/components/AIChatWidget"
 import { FacultyReferences } from "@/components/faculty-references"
+import { AdminButton } from "@/components/AdminButton"
 
 export default function Portfolio() {
+  
   return (
     <div className="min-h-screen bg-background">
       <FloatingContact />
@@ -64,6 +66,7 @@ export default function Portfolio() {
           </nav>
 
           <div className="flex gap-2">
+            <AdminButton />
              {/*
             <Button variant="outline" asChild>
               <Link href="/compare-concepts">Design Demos</Link>

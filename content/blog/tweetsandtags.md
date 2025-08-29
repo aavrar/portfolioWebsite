@@ -1,9 +1,16 @@
 ---
-title: "Tweets and Tags: A Study of Code-Switching in Online Contexts"
-date: "2025-06-24"
-estimatedReadingTime: 8
-tags: ["Bilingualism", "Sociolinguistics", "Twitter", "NLP", "Code-Switching"]
-excerpt: "Code-switching is broadly defined as the use of several languages or dialects within the same conversation or utterance, and it is very prevalent in most bilingual and international communities."
+title: 'Tweets and Tags: A Study of Code-Switching in Online Contexts'
+date: '2025-06-24'
+tags:
+  - Bilingualism
+  - Sociolinguistics
+  - Twitter
+  - NLP
+  - Code-Switching
+excerpt: >-
+  Code-switching is broadly defined as the use of several languages or dialects
+  within the same conversation or utterance, and it is very prevalent in most
+  bilingual and international communities.
 ---
 
 A Study of Bilingualism on Twitter/X.
